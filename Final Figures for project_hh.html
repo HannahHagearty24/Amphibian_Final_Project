@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hannah Hagearty">
+
+<title>Amphibians Final Doc</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Final Figures for project_hh_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Final Figures for project_hh_files/libs/quarto-html/quarto.js"></script>
+<script src="Final Figures for project_hh_files/libs/quarto-html/popper.min.js"></script>
+<script src="Final Figures for project_hh_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Final Figures for project_hh_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Final Figures for project_hh_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Final Figures for project_hh_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Final Figures for project_hh_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Final Figures for project_hh_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Final Figures for project_hh_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="Final Figures for project_hh_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="Final Figures for project_hh_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="Final Figures for project_hh_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="Final Figures for project_hh_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="Final Figures for project_hh_files/libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="Final Figures for project_hh_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="Final Figures for project_hh_files/libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="Final Figures for project_hh_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="Final Figures for project_hh_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="Final Figures for project_hh_files/libs/leaflet-binding-2.2.2/leaflet.js"></script>
+
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Amphibians Final Doc</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hannah Hagearty </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="frogs-salamanders-and-toads-yay" class="level2">
+<h2 class="anchored" data-anchor-id="frogs-salamanders-and-toads-yay">Frogs, Salamanders and Toads YAY!!!</h2>
+<p>#load in the packages needed</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#loading in data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>amph_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"Amphibians_on_NPS_Lands_20231201.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(amph_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#clean up data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(amph_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   3472 obs. of  22 variables:
+ $ Park_Code            : chr  "ABLI" "ABLI" "ABLI" "ABLI" ...
+ $ Park_Name            : chr  "Abraham Lincoln Birthplace National Historical Park" "Abraham Lincoln Birthplace National Historical Park" "Abraham Lincoln Birthplace National Historical Park" "Abraham Lincoln Birthplace National Historical Park" ...
+ $ IM_Network           : chr  "CUPN" "CUPN" "CUPN" "CUPN" ...
+ $ CASC_Region          : chr  "NE" "NE" "NE" "NE" ...
+ $ State                : chr  "KY" "KY" "KY" "KY" ...
+ $ TSN                  : int  173520 208204 173598 173590 173591 173592 773511 773520 173587 173633 ...
+ $ Order                : chr  "Anura" "Caudata" "Caudata" "Caudata" ...
+ $ Family               : chr  "Hylidae" "Ambystomatidae" "Ambystomatidae" "Ambystomatidae" ...
+ $ Scientific_Name      : chr  "Acris crepitans" "Ambystoma barbouri" "Ambystoma jeffersonianum" "Ambystoma maculatum" ...
+ $ Common_Names         : chr  "Northern Cricket Frog, Eastern Cricket Frog" "Streamside Salamander" "Jefferson Salamander" "Spotted Salamander" ...
+ $ Verified_Date        : chr  "9/8/2020" "9/8/2020" "9/8/2020" "9/8/2020" ...
+ $ Park_OccurrenceStatus: chr  "Present" "Adjacent" "Adjacent" "Adjacent" ...
+ $ Notes                : chr  "" "" "Expected but not observed" "Expected but not observed" ...
+ $ Verified_Source      : chr  "https://irma.nps.gov/DataStore/DownloadFile/420948" "https://irma.nps.gov/DataStore/DownloadFile/420948" "https://irma.nps.gov/DataStore/DownloadFile/420948" "https://irma.nps.gov/DataStore/DownloadFile/420948" ...
+ $ Park_Synonyms        : chr  "Acris crepitans crepitans" "" "" "" ...
+ $ NPSpecies_Occurrence : chr  "Present" "Not In Park" "Unconfirmed" "Unconfirmed" ...
+ $ NPSpecies_OccTag     : chr  "" "Adjacent" "" "" ...
+ $ Abundance            : chr  "Common" "" "" "" ...
+ $ Nativeness           : chr  "Native" "Native" "Native" "Native" ...
+ $ GRank                : chr  "G5" "G4" "G4" "G5" ...
+ $ SRank                : chr  "KY: S5" "KY: S4" "KY: S4" "KY: S5" ...
+ $ IUCNRank             : chr  "LC" "NT" "LC" "LC" ...</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I got help from Chat GTP on this question, mostly i would get an error and ask it how to fix it, and I also asked it how to get a graph template, hope that is ok?</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'maps'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    map</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the map of the USA - with help from chat GTP</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>usa_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"state"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(usa_map)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> amph_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(State, Common_Names, Park_OccurrenceStatus) <span class="sc">%&gt;%</span> <span class="co">#other packages interfear so keep this in bro</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Park_OccurrenceStatus <span class="sc">==</span> <span class="st">'Present'</span>) <span class="sc">%&gt;%</span> <span class="co">#filtering for present information</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State) <span class="sc">%&gt;%</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ok so this is taking the number of common names found in each state and it is going to hopefully graph them on a map of the united states, to show species diversity of amphibians in national parks by state.</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>state_abbreviation_to_name <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">abbreviation =</span> <span class="fu">c</span>(<span class="st">"AL"</span>, <span class="st">"AK"</span>, <span class="st">"AZ"</span>, <span class="st">"AR"</span>, <span class="st">"CA"</span>, <span class="st">"CO"</span>, <span class="st">"CT"</span>, <span class="st">"DE"</span>, <span class="st">"FL"</span>, <span class="st">"GA"</span>, </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"HI"</span>, <span class="st">"ID"</span>, <span class="st">"IL"</span>, <span class="st">"IN"</span>, <span class="st">"IA"</span>, <span class="st">"KS"</span>, <span class="st">"KY"</span>, <span class="st">"LA"</span>, <span class="st">"ME"</span>, <span class="st">"MD"</span>, </span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"MA"</span>, <span class="st">"MI"</span>, <span class="st">"MN"</span>, <span class="st">"MS"</span>, <span class="st">"MO"</span>, <span class="st">"MT"</span>, <span class="st">"NE"</span>, <span class="st">"NV"</span>, <span class="st">"NH"</span>, <span class="st">"NJ"</span>, </span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"NM"</span>, <span class="st">"NY"</span>, <span class="st">"NC"</span>, <span class="st">"ND"</span>, <span class="st">"OH"</span>, <span class="st">"OK"</span>, <span class="st">"OR"</span>, <span class="st">"PA"</span>, <span class="st">"RI"</span>, <span class="st">"SC"</span>, </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"SD"</span>, <span class="st">"TN"</span>, <span class="st">"TX"</span>, <span class="st">"UT"</span>, <span class="st">"VT"</span>, <span class="st">"VA"</span>, <span class="st">"WA"</span>, <span class="st">"WV"</span>, <span class="st">"WI"</span>, <span class="st">"WY"</span>),</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"alabama"</span>, <span class="st">"alaska"</span>, <span class="st">"arizona"</span>, <span class="st">"arkansas"</span>, <span class="st">"california"</span>, <span class="st">"colorado"</span>, </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>           <span class="st">"connecticut"</span>, <span class="st">"delaware"</span>, <span class="st">"florida"</span>, <span class="st">"georgia"</span>, <span class="st">"hawaii"</span>, <span class="st">"idaho"</span>, </span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>           <span class="st">"illinois"</span>, <span class="st">"indiana"</span>, <span class="st">"iowa"</span>, <span class="st">"kansas"</span>, <span class="st">"kentucky"</span>, <span class="st">"louisiana"</span>, </span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>           <span class="st">"maine"</span>, <span class="st">"maryland"</span>, <span class="st">"massachusetts"</span>, <span class="st">"michigan"</span>, <span class="st">"minnesota"</span>, </span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>           <span class="st">"mississippi"</span>, <span class="st">"missouri"</span>, <span class="st">"montana"</span>, <span class="st">"nebraska"</span>, <span class="st">"nevada"</span>, <span class="st">"new hampshire"</span>, </span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>           <span class="st">"new jersey"</span>, <span class="st">"new mexico"</span>, <span class="st">"new york"</span>, <span class="st">"north carolina"</span>, <span class="st">"north dakota"</span>, </span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>           <span class="st">"ohio"</span>, <span class="st">"oklahoma"</span>, <span class="st">"oregon"</span>, <span class="st">"pennsylvania"</span>, <span class="st">"rhode island"</span>, <span class="st">"south carolina"</span>, </span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>           <span class="st">"south dakota"</span>, <span class="st">"tennessee"</span>, <span class="st">"texas"</span>, <span class="st">"utah"</span>, <span class="st">"vermont"</span>, <span class="st">"virginia"</span>, </span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>           <span class="st">"washington"</span>, <span class="st">"west virginia"</span>, <span class="st">"wisconsin"</span>, <span class="st">"wyoming"</span>)</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>) <span class="co"># change the labels in the maps_data, to lowercase state names because i need that to merge with the stupid map :(</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> map_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(state_abbreviation_to_name, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"State"</span> <span class="ot">=</span> <span class="st">"abbreviation"</span>))</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(map_data)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>map_data <span class="ot">&lt;-</span> map_data <span class="sc">%&gt;%</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="co">#get rid of stuff that is not labeled as a state (like territories and islands)</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="co">#couldn't get this to work, so asked chat GTP and it said that my merge was not working because the states were named different abbreviations, so this should change the map data to how the map labels things.</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(map_data)</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>usa_map_data <span class="ot">&lt;-</span> usa_map <span class="sc">%&gt;%</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(map_data, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"region"</span> <span class="ot">=</span> <span class="st">"name"</span>)) <span class="co">#join them together</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(usa_map_data)</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co">#get the map into R.</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="co">#got help from chat gtp on this</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co">#ggplot(data = usa_map, aes(x = long, y = lat, group = group)) +</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_polygon(fill = "lightgray", color = "black") + </span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> usa_map_data, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group, <span class="at">fill =</span> count)) <span class="sc">+</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>  <span class="co"># Borders of the states</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"D"</span>) <span class="sc">+</span>  <span class="co"># said this one was color blind friendly</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>                  </span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_continuous() +</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Species Diversity of Amphibians in National Parks by State - Present day"</span>, <span class="at">fill =</span> <span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>)<span class="sc">+</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Longitude"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final-Figures-for-project_hh_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DAAG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'DAAG'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:maps':
+
+    ozone</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'car'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:DAAG':
+
+    vif</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    recode</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    some</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: mvtnorm</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: survival</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'survival'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:DAAG':
+
+    lung</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: TH.data</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: MASS</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'MASS'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:DAAG':
+
+    hills</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    select</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'TH.data'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:MASS':
+
+    geyser</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># because I have a categorical vaiable and the region column had more then two options, I need to run an anova test instead of just a t test.</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">aov</span>(count <span class="sc">~</span> region, <span class="at">data =</span> usa_map_data)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Df   Sum Sq Mean Sq   F value Pr(&gt;F)    
+region         44 56928044 1293819 4.286e+27 &lt;2e-16 ***
+Residuals   14993        0       0                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+499 observations deleted due to missingness</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#post hock test to see if there is significant differences in the data</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>tukey_result <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_result)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>tukey_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = count ~ region, data = usa_map_data)
+
+$region
+                                       diff           lwr           upr
+arizona-alabama                1.500000e+01  1.500000e+01  1.500000e+01
+arkansas-alabama              -1.800000e+01 -1.800000e+01 -1.800000e+01
+california-alabama             5.600000e+01  5.600000e+01  5.600000e+01
+colorado-alabama              -4.200000e+01 -4.200000e+01 -4.200000e+01
+connecticut-alabama           -6.900000e+01 -6.900000e+01 -6.900000e+01
+florida-alabama                5.000000e+01  5.000000e+01  5.000000e+01
+georgia-alabama                4.800000e+01  4.800000e+01  4.800000e+01
+idaho-alabama                 -7.100000e+01 -7.100000e+01 -7.100000e+01
+indiana-alabama               -5.100000e+01 -5.100000e+01 -5.100000e+01
+iowa-alabama                  -7.200000e+01 -7.200000e+01 -7.200000e+01
+kansas-alabama                -6.800000e+01 -6.800000e+01 -6.800000e+01
+kentucky-alabama              -1.100000e+01 -1.100000e+01 -1.100000e+01
+louisiana-alabama             -3.700000e+01 -3.700000e+01 -3.700000e+01
+maine-alabama                 -6.900000e+01 -6.900000e+01 -6.900000e+01
+maryland-alabama               3.800000e+01  3.800000e+01  3.800000e+01
+massachusetts-alabama         -5.200000e+01 -5.200000e+01 -5.200000e+01
+michigan-alabama              -3.400000e+01 -3.400000e+01 -3.400000e+01
+minnesota-alabama             -5.700000e+01 -5.700000e+01 -5.700000e+01
+mississippi-alabama           -2.400000e+01 -2.400000e+01 -2.400000e+01
+missouri-alabama              -4.500000e+01 -4.500000e+01 -4.500000e+01
+montana-alabama               -6.900000e+01 -6.900000e+01 -6.900000e+01
+nebraska-alabama              -5.500000e+01 -5.500000e+01 -5.500000e+01
+nevada-alabama                -7.300000e+01 -7.300000e+01 -7.300000e+01
+new hampshire-alabama         -6.700000e+01 -6.700000e+01 -6.700000e+01
+new jersey-alabama            -6.700000e+01 -6.700000e+01 -6.700000e+01
+new mexico-alabama            -2.700000e+01 -2.700000e+01 -2.700000e+01
+new york-alabama              -1.600000e+01 -1.600000e+01 -1.600000e+01
+north carolina-alabama         8.700000e+01  8.700000e+01  8.700000e+01
+north dakota-alabama          -6.700000e+01 -6.700000e+01 -6.700000e+01
+ohio-alabama                  -4.900000e+01 -4.900000e+01 -4.900000e+01
+oklahoma-alabama              -6.800000e+01 -6.800000e+01 -6.800000e+01
+oregon-alabama                -6.300000e+01 -6.300000e+01 -6.300000e+01
+pennsylvania-alabama           8.200000e+01  8.200000e+01  8.200000e+01
+south carolina-alabama         6.000000e+00  6.000000e+00  6.000000e+00
+south dakota-alabama          -5.500000e+01 -5.500000e+01 -5.500000e+01
+tennessee-alabama             -8.000000e+00 -8.000000e+00 -8.000000e+00
+texas-alabama                  1.300000e+01  1.300000e+01  1.300000e+01
+utah-alabama                  -2.200000e+01 -2.200000e+01 -2.200000e+01
+vermont-alabama               -6.800000e+01 -6.800000e+01 -6.800000e+01
+virginia-alabama               1.800000e+02  1.800000e+02  1.800000e+02
+washington-alabama            -1.100000e+01 -1.100000e+01 -1.100000e+01
+west virginia-alabama         -7.000000e+00 -7.000000e+00 -7.000000e+00
+wisconsin-alabama             -4.900000e+01 -4.900000e+01 -4.900000e+01
+wyoming-alabama               -5.400000e+01 -5.400000e+01 -5.400000e+01
+arkansas-arizona              -3.300000e+01 -3.300000e+01 -3.300000e+01
+california-arizona             4.100000e+01  4.100000e+01  4.100000e+01
+colorado-arizona              -5.700000e+01 -5.700000e+01 -5.700000e+01
+connecticut-arizona           -8.400000e+01 -8.400000e+01 -8.400000e+01
+florida-arizona                3.500000e+01  3.500000e+01  3.500000e+01
+georgia-arizona                3.300000e+01  3.300000e+01  3.300000e+01
+idaho-arizona                 -8.600000e+01 -8.600000e+01 -8.600000e+01
+indiana-arizona               -6.600000e+01 -6.600000e+01 -6.600000e+01
+iowa-arizona                  -8.700000e+01 -8.700000e+01 -8.700000e+01
+kansas-arizona                -8.300000e+01 -8.300000e+01 -8.300000e+01
+kentucky-arizona              -2.600000e+01 -2.600000e+01 -2.600000e+01
+louisiana-arizona             -5.200000e+01 -5.200000e+01 -5.200000e+01
+maine-arizona                 -8.400000e+01 -8.400000e+01 -8.400000e+01
+maryland-arizona               2.300000e+01  2.300000e+01  2.300000e+01
+massachusetts-arizona         -6.700000e+01 -6.700000e+01 -6.700000e+01
+michigan-arizona              -4.900000e+01 -4.900000e+01 -4.900000e+01
+minnesota-arizona             -7.200000e+01 -7.200000e+01 -7.200000e+01
+mississippi-arizona           -3.900000e+01 -3.900000e+01 -3.900000e+01
+missouri-arizona              -6.000000e+01 -6.000000e+01 -6.000000e+01
+montana-arizona               -8.400000e+01 -8.400000e+01 -8.400000e+01
+nebraska-arizona              -7.000000e+01 -7.000000e+01 -7.000000e+01
+nevada-arizona                -8.800000e+01 -8.800000e+01 -8.800000e+01
+new hampshire-arizona         -8.200000e+01 -8.200000e+01 -8.200000e+01
+new jersey-arizona            -8.200000e+01 -8.200000e+01 -8.200000e+01
+new mexico-arizona            -4.200000e+01 -4.200000e+01 -4.200000e+01
+new york-arizona              -3.100000e+01 -3.100000e+01 -3.100000e+01
+north carolina-arizona         7.200000e+01  7.200000e+01  7.200000e+01
+north dakota-arizona          -8.200000e+01 -8.200000e+01 -8.200000e+01
+ohio-arizona                  -6.400000e+01 -6.400000e+01 -6.400000e+01
+oklahoma-arizona              -8.300000e+01 -8.300000e+01 -8.300000e+01
+oregon-arizona                -7.800000e+01 -7.800000e+01 -7.800000e+01
+pennsylvania-arizona           6.700000e+01  6.700000e+01  6.700000e+01
+south carolina-arizona        -9.000000e+00 -9.000000e+00 -9.000000e+00
+south dakota-arizona          -7.000000e+01 -7.000000e+01 -7.000000e+01
+tennessee-arizona             -2.300000e+01 -2.300000e+01 -2.300000e+01
+texas-arizona                 -2.000000e+00 -2.000000e+00 -2.000000e+00
+utah-arizona                  -3.700000e+01 -3.700000e+01 -3.700000e+01
+vermont-arizona               -8.300000e+01 -8.300000e+01 -8.300000e+01
+virginia-arizona               1.650000e+02  1.650000e+02  1.650000e+02
+washington-arizona            -2.600000e+01 -2.600000e+01 -2.600000e+01
+west virginia-arizona         -2.200000e+01 -2.200000e+01 -2.200000e+01
+wisconsin-arizona             -6.400000e+01 -6.400000e+01 -6.400000e+01
+wyoming-arizona               -6.900000e+01 -6.900000e+01 -6.900000e+01
+california-arkansas            7.400000e+01  7.400000e+01  7.400000e+01
+colorado-arkansas             -2.400000e+01 -2.400000e+01 -2.400000e+01
+connecticut-arkansas          -5.100000e+01 -5.100000e+01 -5.100000e+01
+florida-arkansas               6.800000e+01  6.800000e+01  6.800000e+01
+georgia-arkansas               6.600000e+01  6.600000e+01  6.600000e+01
+idaho-arkansas                -5.300000e+01 -5.300000e+01 -5.300000e+01
+indiana-arkansas              -3.300000e+01 -3.300000e+01 -3.300000e+01
+iowa-arkansas                 -5.400000e+01 -5.400000e+01 -5.400000e+01
+kansas-arkansas               -5.000000e+01 -5.000000e+01 -5.000000e+01
+kentucky-arkansas              7.000000e+00  7.000000e+00  7.000000e+00
+louisiana-arkansas            -1.900000e+01 -1.900000e+01 -1.900000e+01
+maine-arkansas                -5.100000e+01 -5.100000e+01 -5.100000e+01
+maryland-arkansas              5.600000e+01  5.600000e+01  5.600000e+01
+massachusetts-arkansas        -3.400000e+01 -3.400000e+01 -3.400000e+01
+michigan-arkansas             -1.600000e+01 -1.600000e+01 -1.600000e+01
+minnesota-arkansas            -3.900000e+01 -3.900000e+01 -3.900000e+01
+mississippi-arkansas          -6.000000e+00 -6.000000e+00 -6.000000e+00
+missouri-arkansas             -2.700000e+01 -2.700000e+01 -2.700000e+01
+montana-arkansas              -5.100000e+01 -5.100000e+01 -5.100000e+01
+nebraska-arkansas             -3.700000e+01 -3.700000e+01 -3.700000e+01
+nevada-arkansas               -5.500000e+01 -5.500000e+01 -5.500000e+01
+new hampshire-arkansas        -4.900000e+01 -4.900000e+01 -4.900000e+01
+new jersey-arkansas           -4.900000e+01 -4.900000e+01 -4.900000e+01
+new mexico-arkansas           -9.000000e+00 -9.000000e+00 -9.000000e+00
+new york-arkansas              2.000000e+00  2.000000e+00  2.000000e+00
+north carolina-arkansas        1.050000e+02  1.050000e+02  1.050000e+02
+north dakota-arkansas         -4.900000e+01 -4.900000e+01 -4.900000e+01
+ohio-arkansas                 -3.100000e+01 -3.100000e+01 -3.100000e+01
+oklahoma-arkansas             -5.000000e+01 -5.000000e+01 -5.000000e+01
+oregon-arkansas               -4.500000e+01 -4.500000e+01 -4.500000e+01
+pennsylvania-arkansas          1.000000e+02  1.000000e+02  1.000000e+02
+south carolina-arkansas        2.400000e+01  2.400000e+01  2.400000e+01
+south dakota-arkansas         -3.700000e+01 -3.700000e+01 -3.700000e+01
+tennessee-arkansas             1.000000e+01  1.000000e+01  1.000000e+01
+texas-arkansas                 3.100000e+01  3.100000e+01  3.100000e+01
+utah-arkansas                 -4.000000e+00 -4.000000e+00 -4.000000e+00
+vermont-arkansas              -5.000000e+01 -5.000000e+01 -5.000000e+01
+virginia-arkansas              1.980000e+02  1.980000e+02  1.980000e+02
+washington-arkansas            7.000000e+00  7.000000e+00  7.000000e+00
+west virginia-arkansas         1.100000e+01  1.100000e+01  1.100000e+01
+wisconsin-arkansas            -3.100000e+01 -3.100000e+01 -3.100000e+01
+wyoming-arkansas              -3.600000e+01 -3.600000e+01 -3.600000e+01
+colorado-california           -9.800000e+01 -9.800000e+01 -9.800000e+01
+connecticut-california        -1.250000e+02 -1.250000e+02 -1.250000e+02
+florida-california            -6.000000e+00 -6.000000e+00 -6.000000e+00
+georgia-california            -8.000000e+00 -8.000000e+00 -8.000000e+00
+idaho-california              -1.270000e+02 -1.270000e+02 -1.270000e+02
+indiana-california            -1.070000e+02 -1.070000e+02 -1.070000e+02
+iowa-california               -1.280000e+02 -1.280000e+02 -1.280000e+02
+kansas-california             -1.240000e+02 -1.240000e+02 -1.240000e+02
+kentucky-california           -6.700000e+01 -6.700000e+01 -6.700000e+01
+louisiana-california          -9.300000e+01 -9.300000e+01 -9.300000e+01
+maine-california              -1.250000e+02 -1.250000e+02 -1.250000e+02
+maryland-california           -1.800000e+01 -1.800000e+01 -1.800000e+01
+massachusetts-california      -1.080000e+02 -1.080000e+02 -1.080000e+02
+michigan-california           -9.000000e+01 -9.000000e+01 -9.000000e+01
+minnesota-california          -1.130000e+02 -1.130000e+02 -1.130000e+02
+mississippi-california        -8.000000e+01 -8.000000e+01 -8.000000e+01
+missouri-california           -1.010000e+02 -1.010000e+02 -1.010000e+02
+montana-california            -1.250000e+02 -1.250000e+02 -1.250000e+02
+nebraska-california           -1.110000e+02 -1.110000e+02 -1.110000e+02
+nevada-california             -1.290000e+02 -1.290000e+02 -1.290000e+02
+new hampshire-california      -1.230000e+02 -1.230000e+02 -1.230000e+02
+new jersey-california         -1.230000e+02 -1.230000e+02 -1.230000e+02
+new mexico-california         -8.300000e+01 -8.300000e+01 -8.300000e+01
+new york-california           -7.200000e+01 -7.200000e+01 -7.200000e+01
+north carolina-california      3.100000e+01  3.100000e+01  3.100000e+01
+north dakota-california       -1.230000e+02 -1.230000e+02 -1.230000e+02
+ohio-california               -1.050000e+02 -1.050000e+02 -1.050000e+02
+oklahoma-california           -1.240000e+02 -1.240000e+02 -1.240000e+02
+oregon-california             -1.190000e+02 -1.190000e+02 -1.190000e+02
+pennsylvania-california        2.600000e+01  2.600000e+01  2.600000e+01
+south carolina-california     -5.000000e+01 -5.000000e+01 -5.000000e+01
+south dakota-california       -1.110000e+02 -1.110000e+02 -1.110000e+02
+tennessee-california          -6.400000e+01 -6.400000e+01 -6.400000e+01
+texas-california              -4.300000e+01 -4.300000e+01 -4.300000e+01
+utah-california               -7.800000e+01 -7.800000e+01 -7.800000e+01
+vermont-california            -1.240000e+02 -1.240000e+02 -1.240000e+02
+virginia-california            1.240000e+02  1.240000e+02  1.240000e+02
+washington-california         -6.700000e+01 -6.700000e+01 -6.700000e+01
+west virginia-california      -6.300000e+01 -6.300000e+01 -6.300000e+01
+wisconsin-california          -1.050000e+02 -1.050000e+02 -1.050000e+02
+wyoming-california            -1.100000e+02 -1.100000e+02 -1.100000e+02
+connecticut-colorado          -2.700000e+01 -2.700000e+01 -2.700000e+01
+florida-colorado               9.200000e+01  9.200000e+01  9.200000e+01
+georgia-colorado               9.000000e+01  9.000000e+01  9.000000e+01
+idaho-colorado                -2.900000e+01 -2.900000e+01 -2.900000e+01
+indiana-colorado              -9.000000e+00 -9.000000e+00 -9.000000e+00
+iowa-colorado                 -3.000000e+01 -3.000000e+01 -3.000000e+01
+kansas-colorado               -2.600000e+01 -2.600000e+01 -2.600000e+01
+kentucky-colorado              3.100000e+01  3.100000e+01  3.100000e+01
+louisiana-colorado             5.000000e+00  5.000000e+00  5.000000e+00
+maine-colorado                -2.700000e+01 -2.700000e+01 -2.700000e+01
+maryland-colorado              8.000000e+01  8.000000e+01  8.000000e+01
+massachusetts-colorado        -1.000000e+01 -1.000000e+01 -1.000000e+01
+michigan-colorado              8.000000e+00  8.000000e+00  8.000000e+00
+minnesota-colorado            -1.500000e+01 -1.500000e+01 -1.500000e+01
+mississippi-colorado           1.800000e+01  1.800000e+01  1.800000e+01
+missouri-colorado             -3.000000e+00 -3.000000e+00 -3.000000e+00
+montana-colorado              -2.700000e+01 -2.700000e+01 -2.700000e+01
+nebraska-colorado             -1.300000e+01 -1.300000e+01 -1.300000e+01
+nevada-colorado               -3.100000e+01 -3.100000e+01 -3.100000e+01
+new hampshire-colorado        -2.500000e+01 -2.500000e+01 -2.500000e+01
+new jersey-colorado           -2.500000e+01 -2.500000e+01 -2.500000e+01
+new mexico-colorado            1.500000e+01  1.500000e+01  1.500000e+01
+new york-colorado              2.600000e+01  2.600000e+01  2.600000e+01
+north carolina-colorado        1.290000e+02  1.290000e+02  1.290000e+02
+north dakota-colorado         -2.500000e+01 -2.500000e+01 -2.500000e+01
+ohio-colorado                 -7.000000e+00 -7.000000e+00 -7.000000e+00
+oklahoma-colorado             -2.600000e+01 -2.600000e+01 -2.600000e+01
+oregon-colorado               -2.100000e+01 -2.100000e+01 -2.100000e+01
+pennsylvania-colorado          1.240000e+02  1.240000e+02  1.240000e+02
+south carolina-colorado        4.800000e+01  4.800000e+01  4.800000e+01
+south dakota-colorado         -1.300000e+01 -1.300000e+01 -1.300000e+01
+tennessee-colorado             3.400000e+01  3.400000e+01  3.400000e+01
+texas-colorado                 5.500000e+01  5.500000e+01  5.500000e+01
+utah-colorado                  2.000000e+01  2.000000e+01  2.000000e+01
+vermont-colorado              -2.600000e+01 -2.600000e+01 -2.600000e+01
+virginia-colorado              2.220000e+02  2.220000e+02  2.220000e+02
+washington-colorado            3.100000e+01  3.100000e+01  3.100000e+01
+west virginia-colorado         3.500000e+01  3.500000e+01  3.500000e+01
+wisconsin-colorado            -7.000000e+00 -7.000000e+00 -7.000000e+00
+wyoming-colorado              -1.200000e+01 -1.200000e+01 -1.200000e+01
+florida-connecticut            1.190000e+02  1.190000e+02  1.190000e+02
+georgia-connecticut            1.170000e+02  1.170000e+02  1.170000e+02
+idaho-connecticut             -2.000000e+00 -2.000000e+00 -2.000000e+00
+indiana-connecticut            1.800000e+01  1.800000e+01  1.800000e+01
+iowa-connecticut              -3.000000e+00 -3.000000e+00 -3.000000e+00
+kansas-connecticut             1.000000e+00  1.000000e+00  1.000000e+00
+kentucky-connecticut           5.800000e+01  5.800000e+01  5.800000e+01
+louisiana-connecticut          3.200000e+01  3.200000e+01  3.200000e+01
+maine-connecticut             -2.926015e-11 -3.722071e-11 -2.129959e-11
+maryland-connecticut           1.070000e+02  1.070000e+02  1.070000e+02
+massachusetts-connecticut      1.700000e+01  1.700000e+01  1.700000e+01
+michigan-connecticut           3.500000e+01  3.500000e+01  3.500000e+01
+minnesota-connecticut          1.200000e+01  1.200000e+01  1.200000e+01
+mississippi-connecticut        4.500000e+01  4.500000e+01  4.500000e+01
+missouri-connecticut           2.400000e+01  2.400000e+01  2.400000e+01
+montana-connecticut           -3.396394e-12 -1.184221e-11  5.049421e-12
+nebraska-connecticut           1.400000e+01  1.400000e+01  1.400000e+01
+nevada-connecticut            -4.000000e+00 -4.000000e+00 -4.000000e+00
+new hampshire-connecticut      2.000000e+00  2.000000e+00  2.000000e+00
+new jersey-connecticut         2.000000e+00  2.000000e+00  2.000000e+00
+new mexico-connecticut         4.200000e+01  4.200000e+01  4.200000e+01
+new york-connecticut           5.300000e+01  5.300000e+01  5.300000e+01
+north carolina-connecticut     1.560000e+02  1.560000e+02  1.560000e+02
+north dakota-connecticut       2.000000e+00  2.000000e+00  2.000000e+00
+ohio-connecticut               2.000000e+01  2.000000e+01  2.000000e+01
+oklahoma-connecticut           1.000000e+00  1.000000e+00  1.000000e+00
+oregon-connecticut             6.000000e+00  6.000000e+00  6.000000e+00
+pennsylvania-connecticut       1.510000e+02  1.510000e+02  1.510000e+02
+south carolina-connecticut     7.500000e+01  7.500000e+01  7.500000e+01
+south dakota-connecticut       1.400000e+01  1.400000e+01  1.400000e+01
+tennessee-connecticut          6.100000e+01  6.100000e+01  6.100000e+01
+texas-connecticut              8.200000e+01  8.200000e+01  8.200000e+01
+utah-connecticut               4.700000e+01  4.700000e+01  4.700000e+01
+vermont-connecticut            1.000000e+00  1.000000e+00  1.000000e+00
+virginia-connecticut           2.490000e+02  2.490000e+02  2.490000e+02
+washington-connecticut         5.800000e+01  5.800000e+01  5.800000e+01
+west virginia-connecticut      6.200000e+01  6.200000e+01  6.200000e+01
+wisconsin-connecticut          2.000000e+01  2.000000e+01  2.000000e+01
+wyoming-connecticut            1.500000e+01  1.500000e+01  1.500000e+01
+georgia-florida               -2.000000e+00 -2.000000e+00 -2.000000e+00
+idaho-florida                 -1.210000e+02 -1.210000e+02 -1.210000e+02
+indiana-florida               -1.010000e+02 -1.010000e+02 -1.010000e+02
+iowa-florida                  -1.220000e+02 -1.220000e+02 -1.220000e+02
+kansas-florida                -1.180000e+02 -1.180000e+02 -1.180000e+02
+kentucky-florida              -6.100000e+01 -6.100000e+01 -6.100000e+01
+louisiana-florida             -8.700000e+01 -8.700000e+01 -8.700000e+01
+maine-florida                 -1.190000e+02 -1.190000e+02 -1.190000e+02
+maryland-florida              -1.200000e+01 -1.200000e+01 -1.200000e+01
+massachusetts-florida         -1.020000e+02 -1.020000e+02 -1.020000e+02
+michigan-florida              -8.400000e+01 -8.400000e+01 -8.400000e+01
+minnesota-florida             -1.070000e+02 -1.070000e+02 -1.070000e+02
+mississippi-florida           -7.400000e+01 -7.400000e+01 -7.400000e+01
+missouri-florida              -9.500000e+01 -9.500000e+01 -9.500000e+01
+montana-florida               -1.190000e+02 -1.190000e+02 -1.190000e+02
+nebraska-florida              -1.050000e+02 -1.050000e+02 -1.050000e+02
+nevada-florida                -1.230000e+02 -1.230000e+02 -1.230000e+02
+new hampshire-florida         -1.170000e+02 -1.170000e+02 -1.170000e+02
+new jersey-florida            -1.170000e+02 -1.170000e+02 -1.170000e+02
+new mexico-florida            -7.700000e+01 -7.700000e+01 -7.700000e+01
+new york-florida              -6.600000e+01 -6.600000e+01 -6.600000e+01
+north carolina-florida         3.700000e+01  3.700000e+01  3.700000e+01
+north dakota-florida          -1.170000e+02 -1.170000e+02 -1.170000e+02
+ohio-florida                  -9.900000e+01 -9.900000e+01 -9.900000e+01
+oklahoma-florida              -1.180000e+02 -1.180000e+02 -1.180000e+02
+oregon-florida                -1.130000e+02 -1.130000e+02 -1.130000e+02
+pennsylvania-florida           3.200000e+01  3.200000e+01  3.200000e+01
+south carolina-florida        -4.400000e+01 -4.400000e+01 -4.400000e+01
+south dakota-florida          -1.050000e+02 -1.050000e+02 -1.050000e+02
+tennessee-florida             -5.800000e+01 -5.800000e+01 -5.800000e+01
+texas-florida                 -3.700000e+01 -3.700000e+01 -3.700000e+01
+utah-florida                  -7.200000e+01 -7.200000e+01 -7.200000e+01
+vermont-florida               -1.180000e+02 -1.180000e+02 -1.180000e+02
+virginia-florida               1.300000e+02  1.300000e+02  1.300000e+02
+washington-florida            -6.100000e+01 -6.100000e+01 -6.100000e+01
+west virginia-florida         -5.700000e+01 -5.700000e+01 -5.700000e+01
+wisconsin-florida             -9.900000e+01 -9.900000e+01 -9.900000e+01
+wyoming-florida               -1.040000e+02 -1.040000e+02 -1.040000e+02
+idaho-georgia                 -1.190000e+02 -1.190000e+02 -1.190000e+02
+indiana-georgia               -9.900000e+01 -9.900000e+01 -9.900000e+01
+iowa-georgia                  -1.200000e+02 -1.200000e+02 -1.200000e+02
+kansas-georgia                -1.160000e+02 -1.160000e+02 -1.160000e+02
+kentucky-georgia              -5.900000e+01 -5.900000e+01 -5.900000e+01
+louisiana-georgia             -8.500000e+01 -8.500000e+01 -8.500000e+01
+maine-georgia                 -1.170000e+02 -1.170000e+02 -1.170000e+02
+maryland-georgia              -1.000000e+01 -1.000000e+01 -1.000000e+01
+massachusetts-georgia         -1.000000e+02 -1.000000e+02 -1.000000e+02
+michigan-georgia              -8.200000e+01 -8.200000e+01 -8.200000e+01
+minnesota-georgia             -1.050000e+02 -1.050000e+02 -1.050000e+02
+mississippi-georgia           -7.200000e+01 -7.200000e+01 -7.200000e+01
+missouri-georgia              -9.300000e+01 -9.300000e+01 -9.300000e+01
+montana-georgia               -1.170000e+02 -1.170000e+02 -1.170000e+02
+nebraska-georgia              -1.030000e+02 -1.030000e+02 -1.030000e+02
+nevada-georgia                -1.210000e+02 -1.210000e+02 -1.210000e+02
+new hampshire-georgia         -1.150000e+02 -1.150000e+02 -1.150000e+02
+new jersey-georgia            -1.150000e+02 -1.150000e+02 -1.150000e+02
+new mexico-georgia            -7.500000e+01 -7.500000e+01 -7.500000e+01
+new york-georgia              -6.400000e+01 -6.400000e+01 -6.400000e+01
+north carolina-georgia         3.900000e+01  3.900000e+01  3.900000e+01
+north dakota-georgia          -1.150000e+02 -1.150000e+02 -1.150000e+02
+ohio-georgia                  -9.700000e+01 -9.700000e+01 -9.700000e+01
+oklahoma-georgia              -1.160000e+02 -1.160000e+02 -1.160000e+02
+oregon-georgia                -1.110000e+02 -1.110000e+02 -1.110000e+02
+pennsylvania-georgia           3.400000e+01  3.400000e+01  3.400000e+01
+south carolina-georgia        -4.200000e+01 -4.200000e+01 -4.200000e+01
+south dakota-georgia          -1.030000e+02 -1.030000e+02 -1.030000e+02
+tennessee-georgia             -5.600000e+01 -5.600000e+01 -5.600000e+01
+texas-georgia                 -3.500000e+01 -3.500000e+01 -3.500000e+01
+utah-georgia                  -7.000000e+01 -7.000000e+01 -7.000000e+01
+vermont-georgia               -1.160000e+02 -1.160000e+02 -1.160000e+02
+virginia-georgia               1.320000e+02  1.320000e+02  1.320000e+02
+washington-georgia            -5.900000e+01 -5.900000e+01 -5.900000e+01
+west virginia-georgia         -5.500000e+01 -5.500000e+01 -5.500000e+01
+wisconsin-georgia             -9.700000e+01 -9.700000e+01 -9.700000e+01
+wyoming-georgia               -1.020000e+02 -1.020000e+02 -1.020000e+02
+indiana-idaho                  2.000000e+01  2.000000e+01  2.000000e+01
+iowa-idaho                    -1.000000e+00 -1.000000e+00 -1.000000e+00
+kansas-idaho                   3.000000e+00  3.000000e+00  3.000000e+00
+kentucky-idaho                 6.000000e+01  6.000000e+01  6.000000e+01
+louisiana-idaho                3.400000e+01  3.400000e+01  3.400000e+01
+maine-idaho                    2.000000e+00  2.000000e+00  2.000000e+00
+maryland-idaho                 1.090000e+02  1.090000e+02  1.090000e+02
+massachusetts-idaho            1.900000e+01  1.900000e+01  1.900000e+01
+michigan-idaho                 3.700000e+01  3.700000e+01  3.700000e+01
+minnesota-idaho                1.400000e+01  1.400000e+01  1.400000e+01
+mississippi-idaho              4.700000e+01  4.700000e+01  4.700000e+01
+missouri-idaho                 2.600000e+01  2.600000e+01  2.600000e+01
+montana-idaho                  2.000000e+00  2.000000e+00  2.000000e+00
+nebraska-idaho                 1.600000e+01  1.600000e+01  1.600000e+01
+nevada-idaho                  -2.000000e+00 -2.000000e+00 -2.000000e+00
+new hampshire-idaho            4.000000e+00  4.000000e+00  4.000000e+00
+new jersey-idaho               4.000000e+00  4.000000e+00  4.000000e+00
+new mexico-idaho               4.400000e+01  4.400000e+01  4.400000e+01
+new york-idaho                 5.500000e+01  5.500000e+01  5.500000e+01
+north carolina-idaho           1.580000e+02  1.580000e+02  1.580000e+02
+north dakota-idaho             4.000000e+00  4.000000e+00  4.000000e+00
+ohio-idaho                     2.200000e+01  2.200000e+01  2.200000e+01
+oklahoma-idaho                 3.000000e+00  3.000000e+00  3.000000e+00
+oregon-idaho                   8.000000e+00  8.000000e+00  8.000000e+00
+pennsylvania-idaho             1.530000e+02  1.530000e+02  1.530000e+02
+south carolina-idaho           7.700000e+01  7.700000e+01  7.700000e+01
+south dakota-idaho             1.600000e+01  1.600000e+01  1.600000e+01
+tennessee-idaho                6.300000e+01  6.300000e+01  6.300000e+01
+texas-idaho                    8.400000e+01  8.400000e+01  8.400000e+01
+utah-idaho                     4.900000e+01  4.900000e+01  4.900000e+01
+vermont-idaho                  3.000000e+00  3.000000e+00  3.000000e+00
+virginia-idaho                 2.510000e+02  2.510000e+02  2.510000e+02
+washington-idaho               6.000000e+01  6.000000e+01  6.000000e+01
+west virginia-idaho            6.400000e+01  6.400000e+01  6.400000e+01
+wisconsin-idaho                2.200000e+01  2.200000e+01  2.200000e+01
+wyoming-idaho                  1.700000e+01  1.700000e+01  1.700000e+01
+iowa-indiana                  -2.100000e+01 -2.100000e+01 -2.100000e+01
+kansas-indiana                -1.700000e+01 -1.700000e+01 -1.700000e+01
+kentucky-indiana               4.000000e+01  4.000000e+01  4.000000e+01
+louisiana-indiana              1.400000e+01  1.400000e+01  1.400000e+01
+maine-indiana                 -1.800000e+01 -1.800000e+01 -1.800000e+01
+maryland-indiana               8.900000e+01  8.900000e+01  8.900000e+01
+massachusetts-indiana         -1.000000e+00 -1.000000e+00 -1.000000e+00
+michigan-indiana               1.700000e+01  1.700000e+01  1.700000e+01
+minnesota-indiana             -6.000000e+00 -6.000000e+00 -6.000000e+00
+mississippi-indiana            2.700000e+01  2.700000e+01  2.700000e+01
+missouri-indiana               6.000000e+00  6.000000e+00  6.000000e+00
+montana-indiana               -1.800000e+01 -1.800000e+01 -1.800000e+01
+nebraska-indiana              -4.000000e+00 -4.000000e+00 -4.000000e+00
+nevada-indiana                -2.200000e+01 -2.200000e+01 -2.200000e+01
+new hampshire-indiana         -1.600000e+01 -1.600000e+01 -1.600000e+01
+new jersey-indiana            -1.600000e+01 -1.600000e+01 -1.600000e+01
+new mexico-indiana             2.400000e+01  2.400000e+01  2.400000e+01
+new york-indiana               3.500000e+01  3.500000e+01  3.500000e+01
+north carolina-indiana         1.380000e+02  1.380000e+02  1.380000e+02
+north dakota-indiana          -1.600000e+01 -1.600000e+01 -1.600000e+01
+ohio-indiana                   2.000000e+00  2.000000e+00  2.000000e+00
+oklahoma-indiana              -1.700000e+01 -1.700000e+01 -1.700000e+01
+oregon-indiana                -1.200000e+01 -1.200000e+01 -1.200000e+01
+pennsylvania-indiana           1.330000e+02  1.330000e+02  1.330000e+02
+south carolina-indiana         5.700000e+01  5.700000e+01  5.700000e+01
+south dakota-indiana          -4.000000e+00 -4.000000e+00 -4.000000e+00
+tennessee-indiana              4.300000e+01  4.300000e+01  4.300000e+01
+texas-indiana                  6.400000e+01  6.400000e+01  6.400000e+01
+utah-indiana                   2.900000e+01  2.900000e+01  2.900000e+01
+vermont-indiana               -1.700000e+01 -1.700000e+01 -1.700000e+01
+virginia-indiana               2.310000e+02  2.310000e+02  2.310000e+02
+washington-indiana             4.000000e+01  4.000000e+01  4.000000e+01
+west virginia-indiana          4.400000e+01  4.400000e+01  4.400000e+01
+wisconsin-indiana              2.000000e+00  2.000000e+00  2.000000e+00
+wyoming-indiana               -3.000000e+00 -3.000000e+00 -3.000000e+00
+kansas-iowa                    4.000000e+00  4.000000e+00  4.000000e+00
+kentucky-iowa                  6.100000e+01  6.100000e+01  6.100000e+01
+louisiana-iowa                 3.500000e+01  3.500000e+01  3.500000e+01
+maine-iowa                     3.000000e+00  3.000000e+00  3.000000e+00
+maryland-iowa                  1.100000e+02  1.100000e+02  1.100000e+02
+massachusetts-iowa             2.000000e+01  2.000000e+01  2.000000e+01
+michigan-iowa                  3.800000e+01  3.800000e+01  3.800000e+01
+minnesota-iowa                 1.500000e+01  1.500000e+01  1.500000e+01
+mississippi-iowa               4.800000e+01  4.800000e+01  4.800000e+01
+missouri-iowa                  2.700000e+01  2.700000e+01  2.700000e+01
+montana-iowa                   3.000000e+00  3.000000e+00  3.000000e+00
+nebraska-iowa                  1.700000e+01  1.700000e+01  1.700000e+01
+nevada-iowa                   -1.000000e+00 -1.000000e+00 -1.000000e+00
+new hampshire-iowa             5.000000e+00  5.000000e+00  5.000000e+00
+new jersey-iowa                5.000000e+00  5.000000e+00  5.000000e+00
+new mexico-iowa                4.500000e+01  4.500000e+01  4.500000e+01
+new york-iowa                  5.600000e+01  5.600000e+01  5.600000e+01
+north carolina-iowa            1.590000e+02  1.590000e+02  1.590000e+02
+north dakota-iowa              5.000000e+00  5.000000e+00  5.000000e+00
+ohio-iowa                      2.300000e+01  2.300000e+01  2.300000e+01
+oklahoma-iowa                  4.000000e+00  4.000000e+00  4.000000e+00
+oregon-iowa                    9.000000e+00  9.000000e+00  9.000000e+00
+pennsylvania-iowa              1.540000e+02  1.540000e+02  1.540000e+02
+south carolina-iowa            7.800000e+01  7.800000e+01  7.800000e+01
+south dakota-iowa              1.700000e+01  1.700000e+01  1.700000e+01
+tennessee-iowa                 6.400000e+01  6.400000e+01  6.400000e+01
+texas-iowa                     8.500000e+01  8.500000e+01  8.500000e+01
+utah-iowa                      5.000000e+01  5.000000e+01  5.000000e+01
+vermont-iowa                   4.000000e+00  4.000000e+00  4.000000e+00
+virginia-iowa                  2.520000e+02  2.520000e+02  2.520000e+02
+washington-iowa                6.100000e+01  6.100000e+01  6.100000e+01
+west virginia-iowa             6.500000e+01  6.500000e+01  6.500000e+01
+wisconsin-iowa                 2.300000e+01  2.300000e+01  2.300000e+01
+wyoming-iowa                   1.800000e+01  1.800000e+01  1.800000e+01
+kentucky-kansas                5.700000e+01  5.700000e+01  5.700000e+01
+louisiana-kansas               3.100000e+01  3.100000e+01  3.100000e+01
+maine-kansas                  -1.000000e+00 -1.000000e+00 -1.000000e+00
+maryland-kansas                1.060000e+02  1.060000e+02  1.060000e+02
+massachusetts-kansas           1.600000e+01  1.600000e+01  1.600000e+01
+michigan-kansas                3.400000e+01  3.400000e+01  3.400000e+01
+minnesota-kansas               1.100000e+01  1.100000e+01  1.100000e+01
+mississippi-kansas             4.400000e+01  4.400000e+01  4.400000e+01
+missouri-kansas                2.300000e+01  2.300000e+01  2.300000e+01
+montana-kansas                -1.000000e+00 -1.000000e+00 -1.000000e+00
+nebraska-kansas                1.300000e+01  1.300000e+01  1.300000e+01
+nevada-kansas                 -5.000000e+00 -5.000000e+00 -5.000000e+00
+new hampshire-kansas           1.000000e+00  1.000000e+00  1.000000e+00
+new jersey-kansas              1.000000e+00  1.000000e+00  1.000000e+00
+new mexico-kansas              4.100000e+01  4.100000e+01  4.100000e+01
+new york-kansas                5.200000e+01  5.200000e+01  5.200000e+01
+north carolina-kansas          1.550000e+02  1.550000e+02  1.550000e+02
+north dakota-kansas            1.000000e+00  1.000000e+00  1.000000e+00
+ohio-kansas                    1.900000e+01  1.900000e+01  1.900000e+01
+oklahoma-kansas                4.257572e-11  3.495406e-11  5.019738e-11
+oregon-kansas                  5.000000e+00  5.000000e+00  5.000000e+00
+pennsylvania-kansas            1.500000e+02  1.500000e+02  1.500000e+02
+south carolina-kansas          7.400000e+01  7.400000e+01  7.400000e+01
+south dakota-kansas            1.300000e+01  1.300000e+01  1.300000e+01
+tennessee-kansas               6.000000e+01  6.000000e+01  6.000000e+01
+texas-kansas                   8.100000e+01  8.100000e+01  8.100000e+01
+utah-kansas                    4.600000e+01  4.600000e+01  4.600000e+01
+vermont-kansas                -5.826450e-13 -9.411948e-12  8.246658e-12
+virginia-kansas                2.480000e+02  2.480000e+02  2.480000e+02
+washington-kansas              5.700000e+01  5.700000e+01  5.700000e+01
+west virginia-kansas           6.100000e+01  6.100000e+01  6.100000e+01
+wisconsin-kansas               1.900000e+01  1.900000e+01  1.900000e+01
+wyoming-kansas                 1.400000e+01  1.400000e+01  1.400000e+01
+louisiana-kentucky            -2.600000e+01 -2.600000e+01 -2.600000e+01
+maine-kentucky                -5.800000e+01 -5.800000e+01 -5.800000e+01
+maryland-kentucky              4.900000e+01  4.900000e+01  4.900000e+01
+massachusetts-kentucky        -4.100000e+01 -4.100000e+01 -4.100000e+01
+michigan-kentucky             -2.300000e+01 -2.300000e+01 -2.300000e+01
+minnesota-kentucky            -4.600000e+01 -4.600000e+01 -4.600000e+01
+mississippi-kentucky          -1.300000e+01 -1.300000e+01 -1.300000e+01
+missouri-kentucky             -3.400000e+01 -3.400000e+01 -3.400000e+01
+montana-kentucky              -5.800000e+01 -5.800000e+01 -5.800000e+01
+nebraska-kentucky             -4.400000e+01 -4.400000e+01 -4.400000e+01
+nevada-kentucky               -6.200000e+01 -6.200000e+01 -6.200000e+01
+new hampshire-kentucky        -5.600000e+01 -5.600000e+01 -5.600000e+01
+new jersey-kentucky           -5.600000e+01 -5.600000e+01 -5.600000e+01
+new mexico-kentucky           -1.600000e+01 -1.600000e+01 -1.600000e+01
+new york-kentucky             -5.000000e+00 -5.000000e+00 -5.000000e+00
+north carolina-kentucky        9.800000e+01  9.800000e+01  9.800000e+01
+north dakota-kentucky         -5.600000e+01 -5.600000e+01 -5.600000e+01
+ohio-kentucky                 -3.800000e+01 -3.800000e+01 -3.800000e+01
+oklahoma-kentucky             -5.700000e+01 -5.700000e+01 -5.700000e+01
+oregon-kentucky               -5.200000e+01 -5.200000e+01 -5.200000e+01
+pennsylvania-kentucky          9.300000e+01  9.300000e+01  9.300000e+01
+south carolina-kentucky        1.700000e+01  1.700000e+01  1.700000e+01
+south dakota-kentucky         -4.400000e+01 -4.400000e+01 -4.400000e+01
+tennessee-kentucky             3.000000e+00  3.000000e+00  3.000000e+00
+texas-kentucky                 2.400000e+01  2.400000e+01  2.400000e+01
+utah-kentucky                 -1.100000e+01 -1.100000e+01 -1.100000e+01
+vermont-kentucky              -5.700000e+01 -5.700000e+01 -5.700000e+01
+virginia-kentucky              1.910000e+02  1.910000e+02  1.910000e+02
+washington-kentucky            2.103206e-12 -2.418317e-12  6.624730e-12
+west virginia-kentucky         4.000000e+00  4.000000e+00  4.000000e+00
+wisconsin-kentucky            -3.800000e+01 -3.800000e+01 -3.800000e+01
+wyoming-kentucky              -4.300000e+01 -4.300000e+01 -4.300000e+01
+maine-louisiana               -3.200000e+01 -3.200000e+01 -3.200000e+01
+maryland-louisiana             7.500000e+01  7.500000e+01  7.500000e+01
+massachusetts-louisiana       -1.500000e+01 -1.500000e+01 -1.500000e+01
+michigan-louisiana             3.000000e+00  3.000000e+00  3.000000e+00
+minnesota-louisiana           -2.000000e+01 -2.000000e+01 -2.000000e+01
+mississippi-louisiana          1.300000e+01  1.300000e+01  1.300000e+01
+missouri-louisiana            -8.000000e+00 -8.000000e+00 -8.000000e+00
+montana-louisiana             -3.200000e+01 -3.200000e+01 -3.200000e+01
+nebraska-louisiana            -1.800000e+01 -1.800000e+01 -1.800000e+01
+nevada-louisiana              -3.600000e+01 -3.600000e+01 -3.600000e+01
+new hampshire-louisiana       -3.000000e+01 -3.000000e+01 -3.000000e+01
+new jersey-louisiana          -3.000000e+01 -3.000000e+01 -3.000000e+01
+new mexico-louisiana           1.000000e+01  1.000000e+01  1.000000e+01
+new york-louisiana             2.100000e+01  2.100000e+01  2.100000e+01
+north carolina-louisiana       1.240000e+02  1.240000e+02  1.240000e+02
+north dakota-louisiana        -3.000000e+01 -3.000000e+01 -3.000000e+01
+ohio-louisiana                -1.200000e+01 -1.200000e+01 -1.200000e+01
+oklahoma-louisiana            -3.100000e+01 -3.100000e+01 -3.100000e+01
+oregon-louisiana              -2.600000e+01 -2.600000e+01 -2.600000e+01
+pennsylvania-louisiana         1.190000e+02  1.190000e+02  1.190000e+02
+south carolina-louisiana       4.300000e+01  4.300000e+01  4.300000e+01
+south dakota-louisiana        -1.800000e+01 -1.800000e+01 -1.800000e+01
+tennessee-louisiana            2.900000e+01  2.900000e+01  2.900000e+01
+texas-louisiana                5.000000e+01  5.000000e+01  5.000000e+01
+utah-louisiana                 1.500000e+01  1.500000e+01  1.500000e+01
+vermont-louisiana             -3.100000e+01 -3.100000e+01 -3.100000e+01
+virginia-louisiana             2.170000e+02  2.170000e+02  2.170000e+02
+washington-louisiana           2.600000e+01  2.600000e+01  2.600000e+01
+west virginia-louisiana        3.000000e+01  3.000000e+01  3.000000e+01
+wisconsin-louisiana           -1.200000e+01 -1.200000e+01 -1.200000e+01
+wyoming-louisiana             -1.700000e+01 -1.700000e+01 -1.700000e+01
+maryland-maine                 1.070000e+02  1.070000e+02  1.070000e+02
+massachusetts-maine            1.700000e+01  1.700000e+01  1.700000e+01
+michigan-maine                 3.500000e+01  3.500000e+01  3.500000e+01
+minnesota-maine                1.200000e+01  1.200000e+01  1.200000e+01
+mississippi-maine              4.500000e+01  4.500000e+01  4.500000e+01
+missouri-maine                 2.400000e+01  2.400000e+01  2.400000e+01
+montana-maine                  2.586376e-11  2.025137e-11  3.147614e-11
+nebraska-maine                 1.400000e+01  1.400000e+01  1.400000e+01
+nevada-maine                  -4.000000e+00 -4.000000e+00 -4.000000e+00
+new hampshire-maine            2.000000e+00  2.000000e+00  2.000000e+00
+new jersey-maine               2.000000e+00  2.000000e+00  2.000000e+00
+new mexico-maine               4.200000e+01  4.200000e+01  4.200000e+01
+new york-maine                 5.300000e+01  5.300000e+01  5.300000e+01
+north carolina-maine           1.560000e+02  1.560000e+02  1.560000e+02
+north dakota-maine             2.000000e+00  2.000000e+00  2.000000e+00
+ohio-maine                     2.000000e+01  2.000000e+01  2.000000e+01
+oklahoma-maine                 1.000000e+00  1.000000e+00  1.000000e+00
+oregon-maine                   6.000000e+00  6.000000e+00  6.000000e+00
+pennsylvania-maine             1.510000e+02  1.510000e+02  1.510000e+02
+south carolina-maine           7.500000e+01  7.500000e+01  7.500000e+01
+south dakota-maine             1.400000e+01  1.400000e+01  1.400000e+01
+tennessee-maine                6.100000e+01  6.100000e+01  6.100000e+01
+texas-maine                    8.200000e+01  8.200000e+01  8.200000e+01
+utah-maine                     4.700000e+01  4.700000e+01  4.700000e+01
+vermont-maine                  1.000000e+00  1.000000e+00  1.000000e+00
+virginia-maine                 2.490000e+02  2.490000e+02  2.490000e+02
+washington-maine               5.800000e+01  5.800000e+01  5.800000e+01
+west virginia-maine            6.200000e+01  6.200000e+01  6.200000e+01
+wisconsin-maine                2.000000e+01  2.000000e+01  2.000000e+01
+wyoming-maine                  1.500000e+01  1.500000e+01  1.500000e+01
+massachusetts-maryland        -9.000000e+01 -9.000000e+01 -9.000000e+01
+michigan-maryland             -7.200000e+01 -7.200000e+01 -7.200000e+01
+minnesota-maryland            -9.500000e+01 -9.500000e+01 -9.500000e+01
+mississippi-maryland          -6.200000e+01 -6.200000e+01 -6.200000e+01
+missouri-maryland             -8.300000e+01 -8.300000e+01 -8.300000e+01
+montana-maryland              -1.070000e+02 -1.070000e+02 -1.070000e+02
+nebraska-maryland             -9.300000e+01 -9.300000e+01 -9.300000e+01
+nevada-maryland               -1.110000e+02 -1.110000e+02 -1.110000e+02
+new hampshire-maryland        -1.050000e+02 -1.050000e+02 -1.050000e+02
+new jersey-maryland           -1.050000e+02 -1.050000e+02 -1.050000e+02
+new mexico-maryland           -6.500000e+01 -6.500000e+01 -6.500000e+01
+new york-maryland             -5.400000e+01 -5.400000e+01 -5.400000e+01
+north carolina-maryland        4.900000e+01  4.900000e+01  4.900000e+01
+north dakota-maryland         -1.050000e+02 -1.050000e+02 -1.050000e+02
+ohio-maryland                 -8.700000e+01 -8.700000e+01 -8.700000e+01
+oklahoma-maryland             -1.060000e+02 -1.060000e+02 -1.060000e+02
+oregon-maryland               -1.010000e+02 -1.010000e+02 -1.010000e+02
+pennsylvania-maryland          4.400000e+01  4.400000e+01  4.400000e+01
+south carolina-maryland       -3.200000e+01 -3.200000e+01 -3.200000e+01
+south dakota-maryland         -9.300000e+01 -9.300000e+01 -9.300000e+01
+tennessee-maryland            -4.600000e+01 -4.600000e+01 -4.600000e+01
+texas-maryland                -2.500000e+01 -2.500000e+01 -2.500000e+01
+utah-maryland                 -6.000000e+01 -6.000000e+01 -6.000000e+01
+vermont-maryland              -1.060000e+02 -1.060000e+02 -1.060000e+02
+virginia-maryland              1.420000e+02  1.420000e+02  1.420000e+02
+washington-maryland           -4.900000e+01 -4.900000e+01 -4.900000e+01
+west virginia-maryland        -4.500000e+01 -4.500000e+01 -4.500000e+01
+wisconsin-maryland            -8.700000e+01 -8.700000e+01 -8.700000e+01
+wyoming-maryland              -9.200000e+01 -9.200000e+01 -9.200000e+01
+michigan-massachusetts         1.800000e+01  1.800000e+01  1.800000e+01
+minnesota-massachusetts       -5.000000e+00 -5.000000e+00 -5.000000e+00
+mississippi-massachusetts      2.800000e+01  2.800000e+01  2.800000e+01
+missouri-massachusetts         7.000000e+00  7.000000e+00  7.000000e+00
+montana-massachusetts         -1.700000e+01 -1.700000e+01 -1.700000e+01
+nebraska-massachusetts        -3.000000e+00 -3.000000e+00 -3.000000e+00
+nevada-massachusetts          -2.100000e+01 -2.100000e+01 -2.100000e+01
+new hampshire-massachusetts   -1.500000e+01 -1.500000e+01 -1.500000e+01
+new jersey-massachusetts      -1.500000e+01 -1.500000e+01 -1.500000e+01
+new mexico-massachusetts       2.500000e+01  2.500000e+01  2.500000e+01
+new york-massachusetts         3.600000e+01  3.600000e+01  3.600000e+01
+north carolina-massachusetts   1.390000e+02  1.390000e+02  1.390000e+02
+north dakota-massachusetts    -1.500000e+01 -1.500000e+01 -1.500000e+01
+ohio-massachusetts             3.000000e+00  3.000000e+00  3.000000e+00
+oklahoma-massachusetts        -1.600000e+01 -1.600000e+01 -1.600000e+01
+oregon-massachusetts          -1.100000e+01 -1.100000e+01 -1.100000e+01
+pennsylvania-massachusetts     1.340000e+02  1.340000e+02  1.340000e+02
+south carolina-massachusetts   5.800000e+01  5.800000e+01  5.800000e+01
+south dakota-massachusetts    -3.000000e+00 -3.000000e+00 -3.000000e+00
+tennessee-massachusetts        4.400000e+01  4.400000e+01  4.400000e+01
+texas-massachusetts            6.500000e+01  6.500000e+01  6.500000e+01
+utah-massachusetts             3.000000e+01  3.000000e+01  3.000000e+01
+vermont-massachusetts         -1.600000e+01 -1.600000e+01 -1.600000e+01
+virginia-massachusetts         2.320000e+02  2.320000e+02  2.320000e+02
+washington-massachusetts       4.100000e+01  4.100000e+01  4.100000e+01
+west virginia-massachusetts    4.500000e+01  4.500000e+01  4.500000e+01
+wisconsin-massachusetts        3.000000e+00  3.000000e+00  3.000000e+00
+wyoming-massachusetts         -2.000000e+00 -2.000000e+00 -2.000000e+00
+minnesota-michigan            -2.300000e+01 -2.300000e+01 -2.300000e+01
+mississippi-michigan           1.000000e+01  1.000000e+01  1.000000e+01
+missouri-michigan             -1.100000e+01 -1.100000e+01 -1.100000e+01
+montana-michigan              -3.500000e+01 -3.500000e+01 -3.500000e+01
+nebraska-michigan             -2.100000e+01 -2.100000e+01 -2.100000e+01
+nevada-michigan               -3.900000e+01 -3.900000e+01 -3.900000e+01
+new hampshire-michigan        -3.300000e+01 -3.300000e+01 -3.300000e+01
+new jersey-michigan           -3.300000e+01 -3.300000e+01 -3.300000e+01
+new mexico-michigan            7.000000e+00  7.000000e+00  7.000000e+00
+new york-michigan              1.800000e+01  1.800000e+01  1.800000e+01
+north carolina-michigan        1.210000e+02  1.210000e+02  1.210000e+02
+north dakota-michigan         -3.300000e+01 -3.300000e+01 -3.300000e+01
+ohio-michigan                 -1.500000e+01 -1.500000e+01 -1.500000e+01
+oklahoma-michigan             -3.400000e+01 -3.400000e+01 -3.400000e+01
+oregon-michigan               -2.900000e+01 -2.900000e+01 -2.900000e+01
+pennsylvania-michigan          1.160000e+02  1.160000e+02  1.160000e+02
+south carolina-michigan        4.000000e+01  4.000000e+01  4.000000e+01
+south dakota-michigan         -2.100000e+01 -2.100000e+01 -2.100000e+01
+tennessee-michigan             2.600000e+01  2.600000e+01  2.600000e+01
+texas-michigan                 4.700000e+01  4.700000e+01  4.700000e+01
+utah-michigan                  1.200000e+01  1.200000e+01  1.200000e+01
+vermont-michigan              -3.400000e+01 -3.400000e+01 -3.400000e+01
+virginia-michigan              2.140000e+02  2.140000e+02  2.140000e+02
+washington-michigan            2.300000e+01  2.300000e+01  2.300000e+01
+west virginia-michigan         2.700000e+01  2.700000e+01  2.700000e+01
+wisconsin-michigan            -1.500000e+01 -1.500000e+01 -1.500000e+01
+wyoming-michigan              -2.000000e+01 -2.000000e+01 -2.000000e+01
+mississippi-minnesota          3.300000e+01  3.300000e+01  3.300000e+01
+missouri-minnesota             1.200000e+01  1.200000e+01  1.200000e+01
+montana-minnesota             -1.200000e+01 -1.200000e+01 -1.200000e+01
+nebraska-minnesota             2.000000e+00  2.000000e+00  2.000000e+00
+nevada-minnesota              -1.600000e+01 -1.600000e+01 -1.600000e+01
+new hampshire-minnesota       -1.000000e+01 -1.000000e+01 -1.000000e+01
+new jersey-minnesota          -1.000000e+01 -1.000000e+01 -1.000000e+01
+new mexico-minnesota           3.000000e+01  3.000000e+01  3.000000e+01
+new york-minnesota             4.100000e+01  4.100000e+01  4.100000e+01
+north carolina-minnesota       1.440000e+02  1.440000e+02  1.440000e+02
+north dakota-minnesota        -1.000000e+01 -1.000000e+01 -1.000000e+01
+ohio-minnesota                 8.000000e+00  8.000000e+00  8.000000e+00
+oklahoma-minnesota            -1.100000e+01 -1.100000e+01 -1.100000e+01
+oregon-minnesota              -6.000000e+00 -6.000000e+00 -6.000000e+00
+pennsylvania-minnesota         1.390000e+02  1.390000e+02  1.390000e+02
+south carolina-minnesota       6.300000e+01  6.300000e+01  6.300000e+01
+south dakota-minnesota         2.000000e+00  2.000000e+00  2.000000e+00
+tennessee-minnesota            4.900000e+01  4.900000e+01  4.900000e+01
+texas-minnesota                7.000000e+01  7.000000e+01  7.000000e+01
+utah-minnesota                 3.500000e+01  3.500000e+01  3.500000e+01
+vermont-minnesota             -1.100000e+01 -1.100000e+01 -1.100000e+01
+virginia-minnesota             2.370000e+02  2.370000e+02  2.370000e+02
+washington-minnesota           4.600000e+01  4.600000e+01  4.600000e+01
+west virginia-minnesota        5.000000e+01  5.000000e+01  5.000000e+01
+wisconsin-minnesota            8.000000e+00  8.000000e+00  8.000000e+00
+wyoming-minnesota              3.000000e+00  3.000000e+00  3.000000e+00
+missouri-mississippi          -2.100000e+01 -2.100000e+01 -2.100000e+01
+montana-mississippi           -4.500000e+01 -4.500000e+01 -4.500000e+01
+nebraska-mississippi          -3.100000e+01 -3.100000e+01 -3.100000e+01
+nevada-mississippi            -4.900000e+01 -4.900000e+01 -4.900000e+01
+new hampshire-mississippi     -4.300000e+01 -4.300000e+01 -4.300000e+01
+new jersey-mississippi        -4.300000e+01 -4.300000e+01 -4.300000e+01
+new mexico-mississippi        -3.000000e+00 -3.000000e+00 -3.000000e+00
+new york-mississippi           8.000000e+00  8.000000e+00  8.000000e+00
+north carolina-mississippi     1.110000e+02  1.110000e+02  1.110000e+02
+north dakota-mississippi      -4.300000e+01 -4.300000e+01 -4.300000e+01
+ohio-mississippi              -2.500000e+01 -2.500000e+01 -2.500000e+01
+oklahoma-mississippi          -4.400000e+01 -4.400000e+01 -4.400000e+01
+oregon-mississippi            -3.900000e+01 -3.900000e+01 -3.900000e+01
+pennsylvania-mississippi       1.060000e+02  1.060000e+02  1.060000e+02
+south carolina-mississippi     3.000000e+01  3.000000e+01  3.000000e+01
+south dakota-mississippi      -3.100000e+01 -3.100000e+01 -3.100000e+01
+tennessee-mississippi          1.600000e+01  1.600000e+01  1.600000e+01
+texas-mississippi              3.700000e+01  3.700000e+01  3.700000e+01
+utah-mississippi               2.000000e+00  2.000000e+00  2.000000e+00
+vermont-mississippi           -4.400000e+01 -4.400000e+01 -4.400000e+01
+virginia-mississippi           2.040000e+02  2.040000e+02  2.040000e+02
+washington-mississippi         1.300000e+01  1.300000e+01  1.300000e+01
+west virginia-mississippi      1.700000e+01  1.700000e+01  1.700000e+01
+wisconsin-mississippi         -2.500000e+01 -2.500000e+01 -2.500000e+01
+wyoming-mississippi           -3.000000e+01 -3.000000e+01 -3.000000e+01
+montana-missouri              -2.400000e+01 -2.400000e+01 -2.400000e+01
+nebraska-missouri             -1.000000e+01 -1.000000e+01 -1.000000e+01
+nevada-missouri               -2.800000e+01 -2.800000e+01 -2.800000e+01
+new hampshire-missouri        -2.200000e+01 -2.200000e+01 -2.200000e+01
+new jersey-missouri           -2.200000e+01 -2.200000e+01 -2.200000e+01
+new mexico-missouri            1.800000e+01  1.800000e+01  1.800000e+01
+new york-missouri              2.900000e+01  2.900000e+01  2.900000e+01
+north carolina-missouri        1.320000e+02  1.320000e+02  1.320000e+02
+north dakota-missouri         -2.200000e+01 -2.200000e+01 -2.200000e+01
+ohio-missouri                 -4.000000e+00 -4.000000e+00 -4.000000e+00
+oklahoma-missouri             -2.300000e+01 -2.300000e+01 -2.300000e+01
+oregon-missouri               -1.800000e+01 -1.800000e+01 -1.800000e+01
+pennsylvania-missouri          1.270000e+02  1.270000e+02  1.270000e+02
+south carolina-missouri        5.100000e+01  5.100000e+01  5.100000e+01
+south dakota-missouri         -1.000000e+01 -1.000000e+01 -1.000000e+01
+tennessee-missouri             3.700000e+01  3.700000e+01  3.700000e+01
+texas-missouri                 5.800000e+01  5.800000e+01  5.800000e+01
+utah-missouri                  2.300000e+01  2.300000e+01  2.300000e+01
+vermont-missouri              -2.300000e+01 -2.300000e+01 -2.300000e+01
+virginia-missouri              2.250000e+02  2.250000e+02  2.250000e+02
+washington-missouri            3.400000e+01  3.400000e+01  3.400000e+01
+west virginia-missouri         3.800000e+01  3.800000e+01  3.800000e+01
+wisconsin-missouri            -4.000000e+00 -4.000000e+00 -4.000000e+00
+wyoming-missouri              -9.000000e+00 -9.000000e+00 -9.000000e+00
+nebraska-montana               1.400000e+01  1.400000e+01  1.400000e+01
+nevada-montana                -4.000000e+00 -4.000000e+00 -4.000000e+00
+new hampshire-montana          2.000000e+00  2.000000e+00  2.000000e+00
+new jersey-montana             2.000000e+00  2.000000e+00  2.000000e+00
+new mexico-montana             4.200000e+01  4.200000e+01  4.200000e+01
+new york-montana               5.300000e+01  5.300000e+01  5.300000e+01
+north carolina-montana         1.560000e+02  1.560000e+02  1.560000e+02
+north dakota-montana           2.000000e+00  2.000000e+00  2.000000e+00
+ohio-montana                   2.000000e+01  2.000000e+01  2.000000e+01
+oklahoma-montana               1.000000e+00  1.000000e+00  1.000000e+00
+oregon-montana                 6.000000e+00  6.000000e+00  6.000000e+00
+pennsylvania-montana           1.510000e+02  1.510000e+02  1.510000e+02
+south carolina-montana         7.500000e+01  7.500000e+01  7.500000e+01
+south dakota-montana           1.400000e+01  1.400000e+01  1.400000e+01
+tennessee-montana              6.100000e+01  6.100000e+01  6.100000e+01
+texas-montana                  8.200000e+01  8.200000e+01  8.200000e+01
+utah-montana                   4.700000e+01  4.700000e+01  4.700000e+01
+vermont-montana                1.000000e+00  1.000000e+00  1.000000e+00
+virginia-montana               2.490000e+02  2.490000e+02  2.490000e+02
+washington-montana             5.800000e+01  5.800000e+01  5.800000e+01
+west virginia-montana          6.200000e+01  6.200000e+01  6.200000e+01
+wisconsin-montana              2.000000e+01  2.000000e+01  2.000000e+01
+wyoming-montana                1.500000e+01  1.500000e+01  1.500000e+01
+nevada-nebraska               -1.800000e+01 -1.800000e+01 -1.800000e+01
+new hampshire-nebraska        -1.200000e+01 -1.200000e+01 -1.200000e+01
+new jersey-nebraska           -1.200000e+01 -1.200000e+01 -1.200000e+01
+new mexico-nebraska            2.800000e+01  2.800000e+01  2.800000e+01
+new york-nebraska              3.900000e+01  3.900000e+01  3.900000e+01
+north carolina-nebraska        1.420000e+02  1.420000e+02  1.420000e+02
+north dakota-nebraska         -1.200000e+01 -1.200000e+01 -1.200000e+01
+ohio-nebraska                  6.000000e+00  6.000000e+00  6.000000e+00
+oklahoma-nebraska             -1.300000e+01 -1.300000e+01 -1.300000e+01
+oregon-nebraska               -8.000000e+00 -8.000000e+00 -8.000000e+00
+pennsylvania-nebraska          1.370000e+02  1.370000e+02  1.370000e+02
+south carolina-nebraska        6.100000e+01  6.100000e+01  6.100000e+01
+south dakota-nebraska          5.104539e-11  4.391353e-11  5.817725e-11
+tennessee-nebraska             4.700000e+01  4.700000e+01  4.700000e+01
+texas-nebraska                 6.800000e+01  6.800000e+01  6.800000e+01
+utah-nebraska                  3.300000e+01  3.300000e+01  3.300000e+01
+vermont-nebraska              -1.300000e+01 -1.300000e+01 -1.300000e+01
+virginia-nebraska              2.350000e+02  2.350000e+02  2.350000e+02
+washington-nebraska            4.400000e+01  4.400000e+01  4.400000e+01
+west virginia-nebraska         4.800000e+01  4.800000e+01  4.800000e+01
+wisconsin-nebraska             6.000000e+00  6.000000e+00  6.000000e+00
+wyoming-nebraska               1.000000e+00  1.000000e+00  1.000000e+00
+new hampshire-nevada           6.000000e+00  6.000000e+00  6.000000e+00
+new jersey-nevada              6.000000e+00  6.000000e+00  6.000000e+00
+new mexico-nevada              4.600000e+01  4.600000e+01  4.600000e+01
+new york-nevada                5.700000e+01  5.700000e+01  5.700000e+01
+north carolina-nevada          1.600000e+02  1.600000e+02  1.600000e+02
+north dakota-nevada            6.000000e+00  6.000000e+00  6.000000e+00
+ohio-nevada                    2.400000e+01  2.400000e+01  2.400000e+01
+oklahoma-nevada                5.000000e+00  5.000000e+00  5.000000e+00
+oregon-nevada                  1.000000e+01  1.000000e+01  1.000000e+01
+pennsylvania-nevada            1.550000e+02  1.550000e+02  1.550000e+02
+south carolina-nevada          7.900000e+01  7.900000e+01  7.900000e+01
+south dakota-nevada            1.800000e+01  1.800000e+01  1.800000e+01
+tennessee-nevada               6.500000e+01  6.500000e+01  6.500000e+01
+texas-nevada                   8.600000e+01  8.600000e+01  8.600000e+01
+utah-nevada                    5.100000e+01  5.100000e+01  5.100000e+01
+vermont-nevada                 5.000000e+00  5.000000e+00  5.000000e+00
+virginia-nevada                2.530000e+02  2.530000e+02  2.530000e+02
+washington-nevada              6.200000e+01  6.200000e+01  6.200000e+01
+west virginia-nevada           6.600000e+01  6.600000e+01  6.600000e+01
+wisconsin-nevada               2.400000e+01  2.400000e+01  2.400000e+01
+wyoming-nevada                 1.900000e+01  1.900000e+01  1.900000e+01
+new jersey-new hampshire      -5.577760e-11 -6.355399e-11 -4.800122e-11
+new mexico-new hampshire       4.000000e+01  4.000000e+01  4.000000e+01
+new york-new hampshire         5.100000e+01  5.100000e+01  5.100000e+01
+north carolina-new hampshire   1.540000e+02  1.540000e+02  1.540000e+02
+north dakota-new hampshire     1.325873e-11  4.187479e-12  2.232998e-11
+ohio-new hampshire             1.800000e+01  1.800000e+01  1.800000e+01
+oklahoma-new hampshire        -1.000000e+00 -1.000000e+00 -1.000000e+00
+oregon-new hampshire           4.000000e+00  4.000000e+00  4.000000e+00
+pennsylvania-new hampshire     1.490000e+02  1.490000e+02  1.490000e+02
+south carolina-new hampshire   7.300000e+01  7.300000e+01  7.300000e+01
+south dakota-new hampshire     1.200000e+01  1.200000e+01  1.200000e+01
+tennessee-new hampshire        5.900000e+01  5.900000e+01  5.900000e+01
+texas-new hampshire            8.000000e+01  8.000000e+01  8.000000e+01
+utah-new hampshire             4.500000e+01  4.500000e+01  4.500000e+01
+vermont-new hampshire         -1.000000e+00 -1.000000e+00 -1.000000e+00
+virginia-new hampshire         2.470000e+02  2.470000e+02  2.470000e+02
+washington-new hampshire       5.600000e+01  5.600000e+01  5.600000e+01
+west virginia-new hampshire    6.000000e+01  6.000000e+01  6.000000e+01
+wisconsin-new hampshire        1.800000e+01  1.800000e+01  1.800000e+01
+wyoming-new hampshire          1.300000e+01  1.300000e+01  1.300000e+01
+new mexico-new jersey          4.000000e+01  4.000000e+01  4.000000e+01
+new york-new jersey            5.100000e+01  5.100000e+01  5.100000e+01
+north carolina-new jersey      1.540000e+02  1.540000e+02  1.540000e+02
+north dakota-new jersey        6.903633e-11  6.081273e-11  7.725993e-11
+ohio-new jersey                1.800000e+01  1.800000e+01  1.800000e+01
+oklahoma-new jersey           -1.000000e+00 -1.000000e+00 -1.000000e+00
+oregon-new jersey              4.000000e+00  4.000000e+00  4.000000e+00
+pennsylvania-new jersey        1.490000e+02  1.490000e+02  1.490000e+02
+south carolina-new jersey      7.300000e+01  7.300000e+01  7.300000e+01
+south dakota-new jersey        1.200000e+01  1.200000e+01  1.200000e+01
+tennessee-new jersey           5.900000e+01  5.900000e+01  5.900000e+01
+texas-new jersey               8.000000e+01  8.000000e+01  8.000000e+01
+utah-new jersey                4.500000e+01  4.500000e+01  4.500000e+01
+vermont-new jersey            -1.000000e+00 -1.000000e+00 -1.000000e+00
+virginia-new jersey            2.470000e+02  2.470000e+02  2.470000e+02
+washington-new jersey          5.600000e+01  5.600000e+01  5.600000e+01
+west virginia-new jersey       6.000000e+01  6.000000e+01  6.000000e+01
+wisconsin-new jersey           1.800000e+01  1.800000e+01  1.800000e+01
+wyoming-new jersey             1.300000e+01  1.300000e+01  1.300000e+01
+new york-new mexico            1.100000e+01  1.100000e+01  1.100000e+01
+north carolina-new mexico      1.140000e+02  1.140000e+02  1.140000e+02
+north dakota-new mexico       -4.000000e+01 -4.000000e+01 -4.000000e+01
+ohio-new mexico               -2.200000e+01 -2.200000e+01 -2.200000e+01
+oklahoma-new mexico           -4.100000e+01 -4.100000e+01 -4.100000e+01
+oregon-new mexico             -3.600000e+01 -3.600000e+01 -3.600000e+01
+pennsylvania-new mexico        1.090000e+02  1.090000e+02  1.090000e+02
+south carolina-new mexico      3.300000e+01  3.300000e+01  3.300000e+01
+south dakota-new mexico       -2.800000e+01 -2.800000e+01 -2.800000e+01
+tennessee-new mexico           1.900000e+01  1.900000e+01  1.900000e+01
+texas-new mexico               4.000000e+01  4.000000e+01  4.000000e+01
+utah-new mexico                5.000000e+00  5.000000e+00  5.000000e+00
+vermont-new mexico            -4.100000e+01 -4.100000e+01 -4.100000e+01
+virginia-new mexico            2.070000e+02  2.070000e+02  2.070000e+02
+washington-new mexico          1.600000e+01  1.600000e+01  1.600000e+01
+west virginia-new mexico       2.000000e+01  2.000000e+01  2.000000e+01
+wisconsin-new mexico          -2.200000e+01 -2.200000e+01 -2.200000e+01
+wyoming-new mexico            -2.700000e+01 -2.700000e+01 -2.700000e+01
+north carolina-new york        1.030000e+02  1.030000e+02  1.030000e+02
+north dakota-new york         -5.100000e+01 -5.100000e+01 -5.100000e+01
+ohio-new york                 -3.300000e+01 -3.300000e+01 -3.300000e+01
+oklahoma-new york             -5.200000e+01 -5.200000e+01 -5.200000e+01
+oregon-new york               -4.700000e+01 -4.700000e+01 -4.700000e+01
+pennsylvania-new york          9.800000e+01  9.800000e+01  9.800000e+01
+south carolina-new york        2.200000e+01  2.200000e+01  2.200000e+01
+south dakota-new york         -3.900000e+01 -3.900000e+01 -3.900000e+01
+tennessee-new york             8.000000e+00  8.000000e+00  8.000000e+00
+texas-new york                 2.900000e+01  2.900000e+01  2.900000e+01
+utah-new york                 -6.000000e+00 -6.000000e+00 -6.000000e+00
+vermont-new york              -5.200000e+01 -5.200000e+01 -5.200000e+01
+virginia-new york              1.960000e+02  1.960000e+02  1.960000e+02
+washington-new york            5.000000e+00  5.000000e+00  5.000000e+00
+west virginia-new york         9.000000e+00  9.000000e+00  9.000000e+00
+wisconsin-new york            -3.300000e+01 -3.300000e+01 -3.300000e+01
+wyoming-new york              -3.800000e+01 -3.800000e+01 -3.800000e+01
+north dakota-north carolina   -1.540000e+02 -1.540000e+02 -1.540000e+02
+ohio-north carolina           -1.360000e+02 -1.360000e+02 -1.360000e+02
+oklahoma-north carolina       -1.550000e+02 -1.550000e+02 -1.550000e+02
+oregon-north carolina         -1.500000e+02 -1.500000e+02 -1.500000e+02
+pennsylvania-north carolina   -5.000000e+00 -5.000000e+00 -5.000000e+00
+south carolina-north carolina -8.100000e+01 -8.100000e+01 -8.100000e+01
+south dakota-north carolina   -1.420000e+02 -1.420000e+02 -1.420000e+02
+tennessee-north carolina      -9.500000e+01 -9.500000e+01 -9.500000e+01
+texas-north carolina          -7.400000e+01 -7.400000e+01 -7.400000e+01
+utah-north carolina           -1.090000e+02 -1.090000e+02 -1.090000e+02
+vermont-north carolina        -1.550000e+02 -1.550000e+02 -1.550000e+02
+virginia-north carolina        9.300000e+01  9.300000e+01  9.300000e+01
+washington-north carolina     -9.800000e+01 -9.800000e+01 -9.800000e+01
+west virginia-north carolina  -9.400000e+01 -9.400000e+01 -9.400000e+01
+wisconsin-north carolina      -1.360000e+02 -1.360000e+02 -1.360000e+02
+wyoming-north carolina        -1.410000e+02 -1.410000e+02 -1.410000e+02
+ohio-north dakota              1.800000e+01  1.800000e+01  1.800000e+01
+oklahoma-north dakota         -1.000000e+00 -1.000000e+00 -1.000000e+00
+oregon-north dakota            4.000000e+00  4.000000e+00  4.000000e+00
+pennsylvania-north dakota      1.490000e+02  1.490000e+02  1.490000e+02
+south carolina-north dakota    7.300000e+01  7.300000e+01  7.300000e+01
+south dakota-north dakota      1.200000e+01  1.200000e+01  1.200000e+01
+tennessee-north dakota         5.900000e+01  5.900000e+01  5.900000e+01
+texas-north dakota             8.000000e+01  8.000000e+01  8.000000e+01
+utah-north dakota              4.500000e+01  4.500000e+01  4.500000e+01
+vermont-north dakota          -1.000000e+00 -1.000000e+00 -1.000000e+00
+virginia-north dakota          2.470000e+02  2.470000e+02  2.470000e+02
+washington-north dakota        5.600000e+01  5.600000e+01  5.600000e+01
+west virginia-north dakota     6.000000e+01  6.000000e+01  6.000000e+01
+wisconsin-north dakota         1.800000e+01  1.800000e+01  1.800000e+01
+wyoming-north dakota           1.300000e+01  1.300000e+01  1.300000e+01
+oklahoma-ohio                 -1.900000e+01 -1.900000e+01 -1.900000e+01
+oregon-ohio                   -1.400000e+01 -1.400000e+01 -1.400000e+01
+pennsylvania-ohio              1.310000e+02  1.310000e+02  1.310000e+02
+south carolina-ohio            5.500000e+01  5.500000e+01  5.500000e+01
+south dakota-ohio             -6.000000e+00 -6.000000e+00 -6.000000e+00
+tennessee-ohio                 4.100000e+01  4.100000e+01  4.100000e+01
+texas-ohio                     6.200000e+01  6.200000e+01  6.200000e+01
+utah-ohio                      2.700000e+01  2.700000e+01  2.700000e+01
+vermont-ohio                  -1.900000e+01 -1.900000e+01 -1.900000e+01
+virginia-ohio                  2.290000e+02  2.290000e+02  2.290000e+02
+washington-ohio                3.800000e+01  3.800000e+01  3.800000e+01
+west virginia-ohio             4.200000e+01  4.200000e+01  4.200000e+01
+wisconsin-ohio                -1.176659e-11 -1.740862e-11 -6.124554e-12
+wyoming-ohio                  -5.000000e+00 -5.000000e+00 -5.000000e+00
+oregon-oklahoma                5.000000e+00  5.000000e+00  5.000000e+00
+pennsylvania-oklahoma          1.500000e+02  1.500000e+02  1.500000e+02
+south carolina-oklahoma        7.400000e+01  7.400000e+01  7.400000e+01
+south dakota-oklahoma          1.300000e+01  1.300000e+01  1.300000e+01
+tennessee-oklahoma             6.000000e+01  6.000000e+01  6.000000e+01
+texas-oklahoma                 8.100000e+01  8.100000e+01  8.100000e+01
+utah-oklahoma                  4.600000e+01  4.600000e+01  4.600000e+01
+vermont-oklahoma              -4.315837e-11 -5.043405e-11 -3.588268e-11
+virginia-oklahoma              2.480000e+02  2.480000e+02  2.480000e+02
+washington-oklahoma            5.700000e+01  5.700000e+01  5.700000e+01
+west virginia-oklahoma         6.100000e+01  6.100000e+01  6.100000e+01
+wisconsin-oklahoma             1.900000e+01  1.900000e+01  1.900000e+01
+wyoming-oklahoma               1.400000e+01  1.400000e+01  1.400000e+01
+pennsylvania-oregon            1.450000e+02  1.450000e+02  1.450000e+02
+south carolina-oregon          6.900000e+01  6.900000e+01  6.900000e+01
+south dakota-oregon            8.000000e+00  8.000000e+00  8.000000e+00
+tennessee-oregon               5.500000e+01  5.500000e+01  5.500000e+01
+texas-oregon                   7.600000e+01  7.600000e+01  7.600000e+01
+utah-oregon                    4.100000e+01  4.100000e+01  4.100000e+01
+vermont-oregon                -5.000000e+00 -5.000000e+00 -5.000000e+00
+virginia-oregon                2.430000e+02  2.430000e+02  2.430000e+02
+washington-oregon              5.200000e+01  5.200000e+01  5.200000e+01
+west virginia-oregon           5.600000e+01  5.600000e+01  5.600000e+01
+wisconsin-oregon               1.400000e+01  1.400000e+01  1.400000e+01
+wyoming-oregon                 9.000000e+00  9.000000e+00  9.000000e+00
+south carolina-pennsylvania   -7.600000e+01 -7.600000e+01 -7.600000e+01
+south dakota-pennsylvania     -1.370000e+02 -1.370000e+02 -1.370000e+02
+tennessee-pennsylvania        -9.000000e+01 -9.000000e+01 -9.000000e+01
+texas-pennsylvania            -6.900000e+01 -6.900000e+01 -6.900000e+01
+utah-pennsylvania             -1.040000e+02 -1.040000e+02 -1.040000e+02
+vermont-pennsylvania          -1.500000e+02 -1.500000e+02 -1.500000e+02
+virginia-pennsylvania          9.800000e+01  9.800000e+01  9.800000e+01
+washington-pennsylvania       -9.300000e+01 -9.300000e+01 -9.300000e+01
+west virginia-pennsylvania    -8.900000e+01 -8.900000e+01 -8.900000e+01
+wisconsin-pennsylvania        -1.310000e+02 -1.310000e+02 -1.310000e+02
+wyoming-pennsylvania          -1.360000e+02 -1.360000e+02 -1.360000e+02
+south dakota-south carolina   -6.100000e+01 -6.100000e+01 -6.100000e+01
+tennessee-south carolina      -1.400000e+01 -1.400000e+01 -1.400000e+01
+texas-south carolina           7.000000e+00  7.000000e+00  7.000000e+00
+utah-south carolina           -2.800000e+01 -2.800000e+01 -2.800000e+01
+vermont-south carolina        -7.400000e+01 -7.400000e+01 -7.400000e+01
+virginia-south carolina        1.740000e+02  1.740000e+02  1.740000e+02
+washington-south carolina     -1.700000e+01 -1.700000e+01 -1.700000e+01
+west virginia-south carolina  -1.300000e+01 -1.300000e+01 -1.300000e+01
+wisconsin-south carolina      -5.500000e+01 -5.500000e+01 -5.500000e+01
+wyoming-south carolina        -6.000000e+01 -6.000000e+01 -6.000000e+01
+tennessee-south dakota         4.700000e+01  4.700000e+01  4.700000e+01
+texas-south dakota             6.800000e+01  6.800000e+01  6.800000e+01
+utah-south dakota              3.300000e+01  3.300000e+01  3.300000e+01
+vermont-south dakota          -1.300000e+01 -1.300000e+01 -1.300000e+01
+virginia-south dakota          2.350000e+02  2.350000e+02  2.350000e+02
+washington-south dakota        4.400000e+01  4.400000e+01  4.400000e+01
+west virginia-south dakota     4.800000e+01  4.800000e+01  4.800000e+01
+wisconsin-south dakota         6.000000e+00  6.000000e+00  6.000000e+00
+wyoming-south dakota           1.000000e+00  1.000000e+00  1.000000e+00
+texas-tennessee                2.100000e+01  2.100000e+01  2.100000e+01
+utah-tennessee                -1.400000e+01 -1.400000e+01 -1.400000e+01
+vermont-tennessee             -6.000000e+01 -6.000000e+01 -6.000000e+01
+virginia-tennessee             1.880000e+02  1.880000e+02  1.880000e+02
+washington-tennessee          -3.000000e+00 -3.000000e+00 -3.000000e+00
+west virginia-tennessee        1.000000e+00  1.000000e+00  1.000000e+00
+wisconsin-tennessee           -4.100000e+01 -4.100000e+01 -4.100000e+01
+wyoming-tennessee             -4.600000e+01 -4.600000e+01 -4.600000e+01
+utah-texas                    -3.500000e+01 -3.500000e+01 -3.500000e+01
+vermont-texas                 -8.100000e+01 -8.100000e+01 -8.100000e+01
+virginia-texas                 1.670000e+02  1.670000e+02  1.670000e+02
+washington-texas              -2.400000e+01 -2.400000e+01 -2.400000e+01
+west virginia-texas           -2.000000e+01 -2.000000e+01 -2.000000e+01
+wisconsin-texas               -6.200000e+01 -6.200000e+01 -6.200000e+01
+wyoming-texas                 -6.700000e+01 -6.700000e+01 -6.700000e+01
+vermont-utah                  -4.600000e+01 -4.600000e+01 -4.600000e+01
+virginia-utah                  2.020000e+02  2.020000e+02  2.020000e+02
+washington-utah                1.100000e+01  1.100000e+01  1.100000e+01
+west virginia-utah             1.500000e+01  1.500000e+01  1.500000e+01
+wisconsin-utah                -2.700000e+01 -2.700000e+01 -2.700000e+01
+wyoming-utah                  -3.200000e+01 -3.200000e+01 -3.200000e+01
+virginia-vermont               2.480000e+02  2.480000e+02  2.480000e+02
+washington-vermont             5.700000e+01  5.700000e+01  5.700000e+01
+west virginia-vermont          6.100000e+01  6.100000e+01  6.100000e+01
+wisconsin-vermont              1.900000e+01  1.900000e+01  1.900000e+01
+wyoming-vermont                1.400000e+01  1.400000e+01  1.400000e+01
+washington-virginia           -1.910000e+02 -1.910000e+02 -1.910000e+02
+west virginia-virginia        -1.870000e+02 -1.870000e+02 -1.870000e+02
+wisconsin-virginia            -2.290000e+02 -2.290000e+02 -2.290000e+02
+wyoming-virginia              -2.340000e+02 -2.340000e+02 -2.340000e+02
+west virginia-washington       4.000000e+00  4.000000e+00  4.000000e+00
+wisconsin-washington          -3.800000e+01 -3.800000e+01 -3.800000e+01
+wyoming-washington            -4.300000e+01 -4.300000e+01 -4.300000e+01
+wisconsin-west virginia       -4.200000e+01 -4.200000e+01 -4.200000e+01
+wyoming-west virginia         -4.700000e+01 -4.700000e+01 -4.700000e+01
+wyoming-wisconsin             -5.000000e+00 -5.000000e+00 -5.000000e+00
+                                  p adj
+arizona-alabama               0.0000000
+arkansas-alabama              0.0000000
+california-alabama            0.0000000
+colorado-alabama              0.0000000
+connecticut-alabama           0.0000000
+florida-alabama               0.0000000
+georgia-alabama               0.0000000
+idaho-alabama                 0.0000000
+indiana-alabama               0.0000000
+iowa-alabama                  0.0000000
+kansas-alabama                0.0000000
+kentucky-alabama              0.0000000
+louisiana-alabama             0.0000000
+maine-alabama                 0.0000000
+maryland-alabama              0.0000000
+massachusetts-alabama         0.0000000
+michigan-alabama              0.0000000
+minnesota-alabama             0.0000000
+mississippi-alabama           0.0000000
+missouri-alabama              0.0000000
+montana-alabama               0.0000000
+nebraska-alabama              0.0000000
+nevada-alabama                0.0000000
+new hampshire-alabama         0.0000000
+new jersey-alabama            0.0000000
+new mexico-alabama            0.0000000
+new york-alabama              0.0000000
+north carolina-alabama        0.0000000
+north dakota-alabama          0.0000000
+ohio-alabama                  0.0000000
+oklahoma-alabama              0.0000000
+oregon-alabama                0.0000000
+pennsylvania-alabama          0.0000000
+south carolina-alabama        0.0000000
+south dakota-alabama          0.0000000
+tennessee-alabama             0.0000000
+texas-alabama                 0.0000000
+utah-alabama                  0.0000000
+vermont-alabama               0.0000000
+virginia-alabama              0.0000000
+washington-alabama            0.0000000
+west virginia-alabama         0.0000000
+wisconsin-alabama             0.0000000
+wyoming-alabama               0.0000000
+arkansas-arizona              0.0000000
+california-arizona            0.0000000
+colorado-arizona              0.0000000
+connecticut-arizona           0.0000000
+florida-arizona               0.0000000
+georgia-arizona               0.0000000
+idaho-arizona                 0.0000000
+indiana-arizona               0.0000000
+iowa-arizona                  0.0000000
+kansas-arizona                0.0000000
+kentucky-arizona              0.0000000
+louisiana-arizona             0.0000000
+maine-arizona                 0.0000000
+maryland-arizona              0.0000000
+massachusetts-arizona         0.0000000
+michigan-arizona              0.0000000
+minnesota-arizona             0.0000000
+mississippi-arizona           0.0000000
+missouri-arizona              0.0000000
+montana-arizona               0.0000000
+nebraska-arizona              0.0000000
+nevada-arizona                0.0000000
+new hampshire-arizona         0.0000000
+new jersey-arizona            0.0000000
+new mexico-arizona            0.0000000
+new york-arizona              0.0000000
+north carolina-arizona        0.0000000
+north dakota-arizona          0.0000000
+ohio-arizona                  0.0000000
+oklahoma-arizona              0.0000000
+oregon-arizona                0.0000000
+pennsylvania-arizona          0.0000000
+south carolina-arizona        0.0000000
+south dakota-arizona          0.0000000
+tennessee-arizona             0.0000000
+texas-arizona                 0.0000000
+utah-arizona                  0.0000000
+vermont-arizona               0.0000000
+virginia-arizona              0.0000000
+washington-arizona            0.0000000
+west virginia-arizona         0.0000000
+wisconsin-arizona             0.0000000
+wyoming-arizona               0.0000000
+california-arkansas           0.0000000
+colorado-arkansas             0.0000000
+connecticut-arkansas          0.0000000
+florida-arkansas              0.0000000
+georgia-arkansas              0.0000000
+idaho-arkansas                0.0000000
+indiana-arkansas              0.0000000
+iowa-arkansas                 0.0000000
+kansas-arkansas               0.0000000
+kentucky-arkansas             0.0000000
+louisiana-arkansas            0.0000000
+maine-arkansas                0.0000000
+maryland-arkansas             0.0000000
+massachusetts-arkansas        0.0000000
+michigan-arkansas             0.0000000
+minnesota-arkansas            0.0000000
+mississippi-arkansas          0.0000000
+missouri-arkansas             0.0000000
+montana-arkansas              0.0000000
+nebraska-arkansas             0.0000000
+nevada-arkansas               0.0000000
+new hampshire-arkansas        0.0000000
+new jersey-arkansas           0.0000000
+new mexico-arkansas           0.0000000
+new york-arkansas             0.0000000
+north carolina-arkansas       0.0000000
+north dakota-arkansas         0.0000000
+ohio-arkansas                 0.0000000
+oklahoma-arkansas             0.0000000
+oregon-arkansas               0.0000000
+pennsylvania-arkansas         0.0000000
+south carolina-arkansas       0.0000000
+south dakota-arkansas         0.0000000
+tennessee-arkansas            0.0000000
+texas-arkansas                0.0000000
+utah-arkansas                 0.0000000
+vermont-arkansas              0.0000000
+virginia-arkansas             0.0000000
+washington-arkansas           0.0000000
+west virginia-arkansas        0.0000000
+wisconsin-arkansas            0.0000000
+wyoming-arkansas              0.0000000
+colorado-california           0.0000000
+connecticut-california        0.0000000
+florida-california            0.0000000
+georgia-california            0.0000000
+idaho-california              0.0000000
+indiana-california            0.0000000
+iowa-california               0.0000000
+kansas-california             0.0000000
+kentucky-california           0.0000000
+louisiana-california          0.0000000
+maine-california              0.0000000
+maryland-california           0.0000000
+massachusetts-california      0.0000000
+michigan-california           0.0000000
+minnesota-california          0.0000000
+mississippi-california        0.0000000
+missouri-california           0.0000000
+montana-california            0.0000000
+nebraska-california           0.0000000
+nevada-california             0.0000000
+new hampshire-california      0.0000000
+new jersey-california         0.0000000
+new mexico-california         0.0000000
+new york-california           0.0000000
+north carolina-california     0.0000000
+north dakota-california       0.0000000
+ohio-california               0.0000000
+oklahoma-california           0.0000000
+oregon-california             0.0000000
+pennsylvania-california       0.0000000
+south carolina-california     0.0000000
+south dakota-california       0.0000000
+tennessee-california          0.0000000
+texas-california              0.0000000
+utah-california               0.0000000
+vermont-california            0.0000000
+virginia-california           0.0000000
+washington-california         0.0000000
+west virginia-california      0.0000000
+wisconsin-california          0.0000000
+wyoming-california            0.0000000
+connecticut-colorado          0.0000000
+florida-colorado              0.0000000
+georgia-colorado              0.0000000
+idaho-colorado                0.0000000
+indiana-colorado              0.0000000
+iowa-colorado                 0.0000000
+kansas-colorado               0.0000000
+kentucky-colorado             0.0000000
+louisiana-colorado            0.0000000
+maine-colorado                0.0000000
+maryland-colorado             0.0000000
+massachusetts-colorado        0.0000000
+michigan-colorado             0.0000000
+minnesota-colorado            0.0000000
+mississippi-colorado          0.0000000
+missouri-colorado             0.0000000
+montana-colorado              0.0000000
+nebraska-colorado             0.0000000
+nevada-colorado               0.0000000
+new hampshire-colorado        0.0000000
+new jersey-colorado           0.0000000
+new mexico-colorado           0.0000000
+new york-colorado             0.0000000
+north carolina-colorado       0.0000000
+north dakota-colorado         0.0000000
+ohio-colorado                 0.0000000
+oklahoma-colorado             0.0000000
+oregon-colorado               0.0000000
+pennsylvania-colorado         0.0000000
+south carolina-colorado       0.0000000
+south dakota-colorado         0.0000000
+tennessee-colorado            0.0000000
+texas-colorado                0.0000000
+utah-colorado                 0.0000000
+vermont-colorado              0.0000000
+virginia-colorado             0.0000000
+washington-colorado           0.0000000
+west virginia-colorado        0.0000000
+wisconsin-colorado            0.0000000
+wyoming-colorado              0.0000000
+florida-connecticut           0.0000000
+georgia-connecticut           0.0000000
+idaho-connecticut             0.0000000
+indiana-connecticut           0.0000000
+iowa-connecticut              0.0000000
+kansas-connecticut            0.0000000
+kentucky-connecticut          0.0000000
+louisiana-connecticut         0.0000000
+maine-connecticut             0.0000000
+maryland-connecticut          0.0000000
+massachusetts-connecticut     0.0000000
+michigan-connecticut          0.0000000
+minnesota-connecticut         0.0000000
+mississippi-connecticut       0.0000000
+missouri-connecticut          0.0000000
+montana-connecticut           0.9999929
+nebraska-connecticut          0.0000000
+nevada-connecticut            0.0000000
+new hampshire-connecticut     0.0000000
+new jersey-connecticut        0.0000000
+new mexico-connecticut        0.0000000
+new york-connecticut          0.0000000
+north carolina-connecticut    0.0000000
+north dakota-connecticut      0.0000000
+ohio-connecticut              0.0000000
+oklahoma-connecticut          0.0000000
+oregon-connecticut            0.0000000
+pennsylvania-connecticut      0.0000000
+south carolina-connecticut    0.0000000
+south dakota-connecticut      0.0000000
+tennessee-connecticut         0.0000000
+texas-connecticut             0.0000000
+utah-connecticut              0.0000000
+vermont-connecticut           0.0000000
+virginia-connecticut          0.0000000
+washington-connecticut        0.0000000
+west virginia-connecticut     0.0000000
+wisconsin-connecticut         0.0000000
+wyoming-connecticut           0.0000000
+georgia-florida               0.0000000
+idaho-florida                 0.0000000
+indiana-florida               0.0000000
+iowa-florida                  0.0000000
+kansas-florida                0.0000000
+kentucky-florida              0.0000000
+louisiana-florida             0.0000000
+maine-florida                 0.0000000
+maryland-florida              0.0000000
+massachusetts-florida         0.0000000
+michigan-florida              0.0000000
+minnesota-florida             0.0000000
+mississippi-florida           0.0000000
+missouri-florida              0.0000000
+montana-florida               0.0000000
+nebraska-florida              0.0000000
+nevada-florida                0.0000000
+new hampshire-florida         0.0000000
+new jersey-florida            0.0000000
+new mexico-florida            0.0000000
+new york-florida              0.0000000
+north carolina-florida        0.0000000
+north dakota-florida          0.0000000
+ohio-florida                  0.0000000
+oklahoma-florida              0.0000000
+oregon-florida                0.0000000
+pennsylvania-florida          0.0000000
+south carolina-florida        0.0000000
+south dakota-florida          0.0000000
+tennessee-florida             0.0000000
+texas-florida                 0.0000000
+utah-florida                  0.0000000
+vermont-florida               0.0000000
+virginia-florida              0.0000000
+washington-florida            0.0000000
+west virginia-florida         0.0000000
+wisconsin-florida             0.0000000
+wyoming-florida               0.0000000
+idaho-georgia                 0.0000000
+indiana-georgia               0.0000000
+iowa-georgia                  0.0000000
+kansas-georgia                0.0000000
+kentucky-georgia              0.0000000
+louisiana-georgia             0.0000000
+maine-georgia                 0.0000000
+maryland-georgia              0.0000000
+massachusetts-georgia         0.0000000
+michigan-georgia              0.0000000
+minnesota-georgia             0.0000000
+mississippi-georgia           0.0000000
+missouri-georgia              0.0000000
+montana-georgia               0.0000000
+nebraska-georgia              0.0000000
+nevada-georgia                0.0000000
+new hampshire-georgia         0.0000000
+new jersey-georgia            0.0000000
+new mexico-georgia            0.0000000
+new york-georgia              0.0000000
+north carolina-georgia        0.0000000
+north dakota-georgia          0.0000000
+ohio-georgia                  0.0000000
+oklahoma-georgia              0.0000000
+oregon-georgia                0.0000000
+pennsylvania-georgia          0.0000000
+south carolina-georgia        0.0000000
+south dakota-georgia          0.0000000
+tennessee-georgia             0.0000000
+texas-georgia                 0.0000000
+utah-georgia                  0.0000000
+vermont-georgia               0.0000000
+virginia-georgia              0.0000000
+washington-georgia            0.0000000
+west virginia-georgia         0.0000000
+wisconsin-georgia             0.0000000
+wyoming-georgia               0.0000000
+indiana-idaho                 0.0000000
+iowa-idaho                    0.0000000
+kansas-idaho                  0.0000000
+kentucky-idaho                0.0000000
+louisiana-idaho               0.0000000
+maine-idaho                   0.0000000
+maryland-idaho                0.0000000
+massachusetts-idaho           0.0000000
+michigan-idaho                0.0000000
+minnesota-idaho               0.0000000
+mississippi-idaho             0.0000000
+missouri-idaho                0.0000000
+montana-idaho                 0.0000000
+nebraska-idaho                0.0000000
+nevada-idaho                  0.0000000
+new hampshire-idaho           0.0000000
+new jersey-idaho              0.0000000
+new mexico-idaho              0.0000000
+new york-idaho                0.0000000
+north carolina-idaho          0.0000000
+north dakota-idaho            0.0000000
+ohio-idaho                    0.0000000
+oklahoma-idaho                0.0000000
+oregon-idaho                  0.0000000
+pennsylvania-idaho            0.0000000
+south carolina-idaho          0.0000000
+south dakota-idaho            0.0000000
+tennessee-idaho               0.0000000
+texas-idaho                   0.0000000
+utah-idaho                    0.0000000
+vermont-idaho                 0.0000000
+virginia-idaho                0.0000000
+washington-idaho              0.0000000
+west virginia-idaho           0.0000000
+wisconsin-idaho               0.0000000
+wyoming-idaho                 0.0000000
+iowa-indiana                  0.0000000
+kansas-indiana                0.0000000
+kentucky-indiana              0.0000000
+louisiana-indiana             0.0000000
+maine-indiana                 0.0000000
+maryland-indiana              0.0000000
+massachusetts-indiana         0.0000000
+michigan-indiana              0.0000000
+minnesota-indiana             0.0000000
+mississippi-indiana           0.0000000
+missouri-indiana              0.0000000
+montana-indiana               0.0000000
+nebraska-indiana              0.0000000
+nevada-indiana                0.0000000
+new hampshire-indiana         0.0000000
+new jersey-indiana            0.0000000
+new mexico-indiana            0.0000000
+new york-indiana              0.0000000
+north carolina-indiana        0.0000000
+north dakota-indiana          0.0000000
+ohio-indiana                  0.0000000
+oklahoma-indiana              0.0000000
+oregon-indiana                0.0000000
+pennsylvania-indiana          0.0000000
+south carolina-indiana        0.0000000
+south dakota-indiana          0.0000000
+tennessee-indiana             0.0000000
+texas-indiana                 0.0000000
+utah-indiana                  0.0000000
+vermont-indiana               0.0000000
+virginia-indiana              0.0000000
+washington-indiana            0.0000000
+west virginia-indiana         0.0000000
+wisconsin-indiana             0.0000000
+wyoming-indiana               0.0000000
+kansas-iowa                   0.0000000
+kentucky-iowa                 0.0000000
+louisiana-iowa                0.0000000
+maine-iowa                    0.0000000
+maryland-iowa                 0.0000000
+massachusetts-iowa            0.0000000
+michigan-iowa                 0.0000000
+minnesota-iowa                0.0000000
+mississippi-iowa              0.0000000
+missouri-iowa                 0.0000000
+montana-iowa                  0.0000000
+nebraska-iowa                 0.0000000
+nevada-iowa                   0.0000000
+new hampshire-iowa            0.0000000
+new jersey-iowa               0.0000000
+new mexico-iowa               0.0000000
+new york-iowa                 0.0000000
+north carolina-iowa           0.0000000
+north dakota-iowa             0.0000000
+ohio-iowa                     0.0000000
+oklahoma-iowa                 0.0000000
+oregon-iowa                   0.0000000
+pennsylvania-iowa             0.0000000
+south carolina-iowa           0.0000000
+south dakota-iowa             0.0000000
+tennessee-iowa                0.0000000
+texas-iowa                    0.0000000
+utah-iowa                     0.0000000
+vermont-iowa                  0.0000000
+virginia-iowa                 0.0000000
+washington-iowa               0.0000000
+west virginia-iowa            0.0000000
+wisconsin-iowa                0.0000000
+wyoming-iowa                  0.0000000
+kentucky-kansas               0.0000000
+louisiana-kansas              0.0000000
+maine-kansas                  0.0000000
+maryland-kansas               0.0000000
+massachusetts-kansas          0.0000000
+michigan-kansas               0.0000000
+minnesota-kansas              0.0000000
+mississippi-kansas            0.0000000
+missouri-kansas               0.0000000
+montana-kansas                0.0000000
+nebraska-kansas               0.0000000
+nevada-kansas                 0.0000000
+new hampshire-kansas          0.0000000
+new jersey-kansas             0.0000000
+new mexico-kansas             0.0000000
+new york-kansas               0.0000000
+north carolina-kansas         0.0000000
+north dakota-kansas           0.0000000
+ohio-kansas                   0.0000000
+oklahoma-kansas               0.0000000
+oregon-kansas                 0.0000000
+pennsylvania-kansas           0.0000000
+south carolina-kansas         0.0000000
+south dakota-kansas           0.0000000
+tennessee-kansas              0.0000000
+texas-kansas                  0.0000000
+utah-kansas                   0.0000000
+vermont-kansas                1.0000000
+virginia-kansas               0.0000000
+washington-kansas             0.0000000
+west virginia-kansas          0.0000000
+wisconsin-kansas              0.0000000
+wyoming-kansas                0.0000000
+louisiana-kentucky            0.0000000
+maine-kentucky                0.0000000
+maryland-kentucky             0.0000000
+massachusetts-kentucky        0.0000000
+michigan-kentucky             0.0000000
+minnesota-kentucky            0.0000000
+mississippi-kentucky          0.0000000
+missouri-kentucky             0.0000000
+montana-kentucky              0.0000000
+nebraska-kentucky             0.0000000
+nevada-kentucky               0.0000000
+new hampshire-kentucky        0.0000000
+new jersey-kentucky           0.0000000
+new mexico-kentucky           0.0000000
+new york-kentucky             0.0000000
+north carolina-kentucky       0.0000000
+north dakota-kentucky         0.0000000
+ohio-kentucky                 0.0000000
+oklahoma-kentucky             0.0000000
+oregon-kentucky               0.0000000
+pennsylvania-kentucky         0.0000000
+south carolina-kentucky       0.0000000
+south dakota-kentucky         0.0000000
+tennessee-kentucky            0.0000000
+texas-kentucky                0.0000000
+utah-kentucky                 0.0000000
+vermont-kentucky              0.0000000
+virginia-kentucky             0.0000000
+washington-kentucky           0.9997059
+west virginia-kentucky        0.0000000
+wisconsin-kentucky            0.0000000
+wyoming-kentucky              0.0000000
+maine-louisiana               0.0000000
+maryland-louisiana            0.0000000
+massachusetts-louisiana       0.0000000
+michigan-louisiana            0.0000000
+minnesota-louisiana           0.0000000
+mississippi-louisiana         0.0000000
+missouri-louisiana            0.0000000
+montana-louisiana             0.0000000
+nebraska-louisiana            0.0000000
+nevada-louisiana              0.0000000
+new hampshire-louisiana       0.0000000
+new jersey-louisiana          0.0000000
+new mexico-louisiana          0.0000000
+new york-louisiana            0.0000000
+north carolina-louisiana      0.0000000
+north dakota-louisiana        0.0000000
+ohio-louisiana                0.0000000
+oklahoma-louisiana            0.0000000
+oregon-louisiana              0.0000000
+pennsylvania-louisiana        0.0000000
+south carolina-louisiana      0.0000000
+south dakota-louisiana        0.0000000
+tennessee-louisiana           0.0000000
+texas-louisiana               0.0000000
+utah-louisiana                0.0000000
+vermont-louisiana             0.0000000
+virginia-louisiana            0.0000000
+washington-louisiana          0.0000000
+west virginia-louisiana       0.0000000
+wisconsin-louisiana           0.0000000
+wyoming-louisiana             0.0000000
+maryland-maine                0.0000000
+massachusetts-maine           0.0000000
+michigan-maine                0.0000000
+minnesota-maine               0.0000000
+mississippi-maine             0.0000000
+missouri-maine                0.0000000
+montana-maine                 0.0000000
+nebraska-maine                0.0000000
+nevada-maine                  0.0000000
+new hampshire-maine           0.0000000
+new jersey-maine              0.0000000
+new mexico-maine              0.0000000
+new york-maine                0.0000000
+north carolina-maine          0.0000000
+north dakota-maine            0.0000000
+ohio-maine                    0.0000000
+oklahoma-maine                0.0000000
+oregon-maine                  0.0000000
+pennsylvania-maine            0.0000000
+south carolina-maine          0.0000000
+south dakota-maine            0.0000000
+tennessee-maine               0.0000000
+texas-maine                   0.0000000
+utah-maine                    0.0000000
+vermont-maine                 0.0000000
+virginia-maine                0.0000000
+washington-maine              0.0000000
+west virginia-maine           0.0000000
+wisconsin-maine               0.0000000
+wyoming-maine                 0.0000000
+massachusetts-maryland        0.0000000
+michigan-maryland             0.0000000
+minnesota-maryland            0.0000000
+mississippi-maryland          0.0000000
+missouri-maryland             0.0000000
+montana-maryland              0.0000000
+nebraska-maryland             0.0000000
+nevada-maryland               0.0000000
+new hampshire-maryland        0.0000000
+new jersey-maryland           0.0000000
+new mexico-maryland           0.0000000
+new york-maryland             0.0000000
+north carolina-maryland       0.0000000
+north dakota-maryland         0.0000000
+ohio-maryland                 0.0000000
+oklahoma-maryland             0.0000000
+oregon-maryland               0.0000000
+pennsylvania-maryland         0.0000000
+south carolina-maryland       0.0000000
+south dakota-maryland         0.0000000
+tennessee-maryland            0.0000000
+texas-maryland                0.0000000
+utah-maryland                 0.0000000
+vermont-maryland              0.0000000
+virginia-maryland             0.0000000
+washington-maryland           0.0000000
+west virginia-maryland        0.0000000
+wisconsin-maryland            0.0000000
+wyoming-maryland              0.0000000
+michigan-massachusetts        0.0000000
+minnesota-massachusetts       0.0000000
+mississippi-massachusetts     0.0000000
+missouri-massachusetts        0.0000000
+montana-massachusetts         0.0000000
+nebraska-massachusetts        0.0000000
+nevada-massachusetts          0.0000000
+new hampshire-massachusetts   0.0000000
+new jersey-massachusetts      0.0000000
+new mexico-massachusetts      0.0000000
+new york-massachusetts        0.0000000
+north carolina-massachusetts  0.0000000
+north dakota-massachusetts    0.0000000
+ohio-massachusetts            0.0000000
+oklahoma-massachusetts        0.0000000
+oregon-massachusetts          0.0000000
+pennsylvania-massachusetts    0.0000000
+south carolina-massachusetts  0.0000000
+south dakota-massachusetts    0.0000000
+tennessee-massachusetts       0.0000000
+texas-massachusetts           0.0000000
+utah-massachusetts            0.0000000
+vermont-massachusetts         0.0000000
+virginia-massachusetts        0.0000000
+washington-massachusetts      0.0000000
+west virginia-massachusetts   0.0000000
+wisconsin-massachusetts       0.0000000
+wyoming-massachusetts         0.0000000
+minnesota-michigan            0.0000000
+mississippi-michigan          0.0000000
+missouri-michigan             0.0000000
+montana-michigan              0.0000000
+nebraska-michigan             0.0000000
+nevada-michigan               0.0000000
+new hampshire-michigan        0.0000000
+new jersey-michigan           0.0000000
+new mexico-michigan           0.0000000
+new york-michigan             0.0000000
+north carolina-michigan       0.0000000
+north dakota-michigan         0.0000000
+ohio-michigan                 0.0000000
+oklahoma-michigan             0.0000000
+oregon-michigan               0.0000000
+pennsylvania-michigan         0.0000000
+south carolina-michigan       0.0000000
+south dakota-michigan         0.0000000
+tennessee-michigan            0.0000000
+texas-michigan                0.0000000
+utah-michigan                 0.0000000
+vermont-michigan              0.0000000
+virginia-michigan             0.0000000
+washington-michigan           0.0000000
+west virginia-michigan        0.0000000
+wisconsin-michigan            0.0000000
+wyoming-michigan              0.0000000
+mississippi-minnesota         0.0000000
+missouri-minnesota            0.0000000
+montana-minnesota             0.0000000
+nebraska-minnesota            0.0000000
+nevada-minnesota              0.0000000
+new hampshire-minnesota       0.0000000
+new jersey-minnesota          0.0000000
+new mexico-minnesota          0.0000000
+new york-minnesota            0.0000000
+north carolina-minnesota      0.0000000
+north dakota-minnesota        0.0000000
+ohio-minnesota                0.0000000
+oklahoma-minnesota            0.0000000
+oregon-minnesota              0.0000000
+pennsylvania-minnesota        0.0000000
+south carolina-minnesota      0.0000000
+south dakota-minnesota        0.0000000
+tennessee-minnesota           0.0000000
+texas-minnesota               0.0000000
+utah-minnesota                0.0000000
+vermont-minnesota             0.0000000
+virginia-minnesota            0.0000000
+washington-minnesota          0.0000000
+west virginia-minnesota       0.0000000
+wisconsin-minnesota           0.0000000
+wyoming-minnesota             0.0000000
+missouri-mississippi          0.0000000
+montana-mississippi           0.0000000
+nebraska-mississippi          0.0000000
+nevada-mississippi            0.0000000
+new hampshire-mississippi     0.0000000
+new jersey-mississippi        0.0000000
+new mexico-mississippi        0.0000000
+new york-mississippi          0.0000000
+north carolina-mississippi    0.0000000
+north dakota-mississippi      0.0000000
+ohio-mississippi              0.0000000
+oklahoma-mississippi          0.0000000
+oregon-mississippi            0.0000000
+pennsylvania-mississippi      0.0000000
+south carolina-mississippi    0.0000000
+south dakota-mississippi      0.0000000
+tennessee-mississippi         0.0000000
+texas-mississippi             0.0000000
+utah-mississippi              0.0000000
+vermont-mississippi           0.0000000
+virginia-mississippi          0.0000000
+washington-mississippi        0.0000000
+west virginia-mississippi     0.0000000
+wisconsin-mississippi         0.0000000
+wyoming-mississippi           0.0000000
+montana-missouri              0.0000000
+nebraska-missouri             0.0000000
+nevada-missouri               0.0000000
+new hampshire-missouri        0.0000000
+new jersey-missouri           0.0000000
+new mexico-missouri           0.0000000
+new york-missouri             0.0000000
+north carolina-missouri       0.0000000
+north dakota-missouri         0.0000000
+ohio-missouri                 0.0000000
+oklahoma-missouri             0.0000000
+oregon-missouri               0.0000000
+pennsylvania-missouri         0.0000000
+south carolina-missouri       0.0000000
+south dakota-missouri         0.0000000
+tennessee-missouri            0.0000000
+texas-missouri                0.0000000
+utah-missouri                 0.0000000
+vermont-missouri              0.0000000
+virginia-missouri             0.0000000
+washington-missouri           0.0000000
+west virginia-missouri        0.0000000
+wisconsin-missouri            0.0000000
+wyoming-missouri              0.0000000
+nebraska-montana              0.0000000
+nevada-montana                0.0000000
+new hampshire-montana         0.0000000
+new jersey-montana            0.0000000
+new mexico-montana            0.0000000
+new york-montana              0.0000000
+north carolina-montana        0.0000000
+north dakota-montana          0.0000000
+ohio-montana                  0.0000000
+oklahoma-montana              0.0000000
+oregon-montana                0.0000000
+pennsylvania-montana          0.0000000
+south carolina-montana        0.0000000
+south dakota-montana          0.0000000
+tennessee-montana             0.0000000
+texas-montana                 0.0000000
+utah-montana                  0.0000000
+vermont-montana               0.0000000
+virginia-montana              0.0000000
+washington-montana            0.0000000
+west virginia-montana         0.0000000
+wisconsin-montana             0.0000000
+wyoming-montana               0.0000000
+nevada-nebraska               0.0000000
+new hampshire-nebraska        0.0000000
+new jersey-nebraska           0.0000000
+new mexico-nebraska           0.0000000
+new york-nebraska             0.0000000
+north carolina-nebraska       0.0000000
+north dakota-nebraska         0.0000000
+ohio-nebraska                 0.0000000
+oklahoma-nebraska             0.0000000
+oregon-nebraska               0.0000000
+pennsylvania-nebraska         0.0000000
+south carolina-nebraska       0.0000000
+south dakota-nebraska         0.0000000
+tennessee-nebraska            0.0000000
+texas-nebraska                0.0000000
+utah-nebraska                 0.0000000
+vermont-nebraska              0.0000000
+virginia-nebraska             0.0000000
+washington-nebraska           0.0000000
+west virginia-nebraska        0.0000000
+wisconsin-nebraska            0.0000000
+wyoming-nebraska              0.0000000
+new hampshire-nevada          0.0000000
+new jersey-nevada             0.0000000
+new mexico-nevada             0.0000000
+new york-nevada               0.0000000
+north carolina-nevada         0.0000000
+north dakota-nevada           0.0000000
+ohio-nevada                   0.0000000
+oklahoma-nevada               0.0000000
+oregon-nevada                 0.0000000
+pennsylvania-nevada           0.0000000
+south carolina-nevada         0.0000000
+south dakota-nevada           0.0000000
+tennessee-nevada              0.0000000
+texas-nevada                  0.0000000
+utah-nevada                   0.0000000
+vermont-nevada                0.0000000
+virginia-nevada               0.0000000
+washington-nevada             0.0000000
+west virginia-nevada          0.0000000
+wisconsin-nevada              0.0000000
+wyoming-nevada                0.0000000
+new jersey-new hampshire      0.0000000
+new mexico-new hampshire      0.0000000
+new york-new hampshire        0.0000000
+north carolina-new hampshire  0.0000000
+north dakota-new hampshire    0.0000081
+ohio-new hampshire            0.0000000
+oklahoma-new hampshire        0.0000000
+oregon-new hampshire          0.0000000
+pennsylvania-new hampshire    0.0000000
+south carolina-new hampshire  0.0000000
+south dakota-new hampshire    0.0000000
+tennessee-new hampshire       0.0000000
+texas-new hampshire           0.0000000
+utah-new hampshire            0.0000000
+vermont-new hampshire         0.0000000
+virginia-new hampshire        0.0000000
+washington-new hampshire      0.0000000
+west virginia-new hampshire   0.0000000
+wisconsin-new hampshire       0.0000000
+wyoming-new hampshire         0.0000000
+new mexico-new jersey         0.0000000
+new york-new jersey           0.0000000
+north carolina-new jersey     0.0000000
+north dakota-new jersey       0.0000000
+ohio-new jersey               0.0000000
+oklahoma-new jersey           0.0000000
+oregon-new jersey             0.0000000
+pennsylvania-new jersey       0.0000000
+south carolina-new jersey     0.0000000
+south dakota-new jersey       0.0000000
+tennessee-new jersey          0.0000000
+texas-new jersey              0.0000000
+utah-new jersey               0.0000000
+vermont-new jersey            0.0000000
+virginia-new jersey           0.0000000
+washington-new jersey         0.0000000
+west virginia-new jersey      0.0000000
+wisconsin-new jersey          0.0000000
+wyoming-new jersey            0.0000000
+new york-new mexico           0.0000000
+north carolina-new mexico     0.0000000
+north dakota-new mexico       0.0000000
+ohio-new mexico               0.0000000
+oklahoma-new mexico           0.0000000
+oregon-new mexico             0.0000000
+pennsylvania-new mexico       0.0000000
+south carolina-new mexico     0.0000000
+south dakota-new mexico       0.0000000
+tennessee-new mexico          0.0000000
+texas-new mexico              0.0000000
+utah-new mexico               0.0000000
+vermont-new mexico            0.0000000
+virginia-new mexico           0.0000000
+washington-new mexico         0.0000000
+west virginia-new mexico      0.0000000
+wisconsin-new mexico          0.0000000
+wyoming-new mexico            0.0000000
+north carolina-new york       0.0000000
+north dakota-new york         0.0000000
+ohio-new york                 0.0000000
+oklahoma-new york             0.0000000
+oregon-new york               0.0000000
+pennsylvania-new york         0.0000000
+south carolina-new york       0.0000000
+south dakota-new york         0.0000000
+tennessee-new york            0.0000000
+texas-new york                0.0000000
+utah-new york                 0.0000000
+vermont-new york              0.0000000
+virginia-new york             0.0000000
+washington-new york           0.0000000
+west virginia-new york        0.0000000
+wisconsin-new york            0.0000000
+wyoming-new york              0.0000000
+north dakota-north carolina   0.0000000
+ohio-north carolina           0.0000000
+oklahoma-north carolina       0.0000000
+oregon-north carolina         0.0000000
+pennsylvania-north carolina   0.0000000
+south carolina-north carolina 0.0000000
+south dakota-north carolina   0.0000000
+tennessee-north carolina      0.0000000
+texas-north carolina          0.0000000
+utah-north carolina           0.0000000
+vermont-north carolina        0.0000000
+virginia-north carolina       0.0000000
+washington-north carolina     0.0000000
+west virginia-north carolina  0.0000000
+wisconsin-north carolina      0.0000000
+wyoming-north carolina        0.0000000
+ohio-north dakota             0.0000000
+oklahoma-north dakota         0.0000000
+oregon-north dakota           0.0000000
+pennsylvania-north dakota     0.0000000
+south carolina-north dakota   0.0000000
+south dakota-north dakota     0.0000000
+tennessee-north dakota        0.0000000
+texas-north dakota            0.0000000
+utah-north dakota             0.0000000
+vermont-north dakota          0.0000000
+virginia-north dakota         0.0000000
+washington-north dakota       0.0000000
+west virginia-north dakota    0.0000000
+wisconsin-north dakota        0.0000000
+wyoming-north dakota          0.0000000
+oklahoma-ohio                 0.0000000
+oregon-ohio                   0.0000000
+pennsylvania-ohio             0.0000000
+south carolina-ohio           0.0000000
+south dakota-ohio             0.0000000
+tennessee-ohio                0.0000000
+texas-ohio                    0.0000000
+utah-ohio                     0.0000000
+vermont-ohio                  0.0000000
+virginia-ohio                 0.0000000
+washington-ohio               0.0000000
+west virginia-ohio            0.0000000
+wisconsin-ohio                0.0000000
+wyoming-ohio                  0.0000000
+oregon-oklahoma               0.0000000
+pennsylvania-oklahoma         0.0000000
+south carolina-oklahoma       0.0000000
+south dakota-oklahoma         0.0000000
+tennessee-oklahoma            0.0000000
+texas-oklahoma                0.0000000
+utah-oklahoma                 0.0000000
+vermont-oklahoma              0.0000000
+virginia-oklahoma             0.0000000
+washington-oklahoma           0.0000000
+west virginia-oklahoma        0.0000000
+wisconsin-oklahoma            0.0000000
+wyoming-oklahoma              0.0000000
+pennsylvania-oregon           0.0000000
+south carolina-oregon         0.0000000
+south dakota-oregon           0.0000000
+tennessee-oregon              0.0000000
+texas-oregon                  0.0000000
+utah-oregon                   0.0000000
+vermont-oregon                0.0000000
+virginia-oregon               0.0000000
+washington-oregon             0.0000000
+west virginia-oregon          0.0000000
+wisconsin-oregon              0.0000000
+wyoming-oregon                0.0000000
+south carolina-pennsylvania   0.0000000
+south dakota-pennsylvania     0.0000000
+tennessee-pennsylvania        0.0000000
+texas-pennsylvania            0.0000000
+utah-pennsylvania             0.0000000
+vermont-pennsylvania          0.0000000
+virginia-pennsylvania         0.0000000
+washington-pennsylvania       0.0000000
+west virginia-pennsylvania    0.0000000
+wisconsin-pennsylvania        0.0000000
+wyoming-pennsylvania          0.0000000
+south dakota-south carolina   0.0000000
+tennessee-south carolina      0.0000000
+texas-south carolina          0.0000000
+utah-south carolina           0.0000000
+vermont-south carolina        0.0000000
+virginia-south carolina       0.0000000
+washington-south carolina     0.0000000
+west virginia-south carolina  0.0000000
+wisconsin-south carolina      0.0000000
+wyoming-south carolina        0.0000000
+tennessee-south dakota        0.0000000
+texas-south dakota            0.0000000
+utah-south dakota             0.0000000
+vermont-south dakota          0.0000000
+virginia-south dakota         0.0000000
+washington-south dakota       0.0000000
+west virginia-south dakota    0.0000000
+wisconsin-south dakota        0.0000000
+wyoming-south dakota          0.0000000
+texas-tennessee               0.0000000
+utah-tennessee                0.0000000
+vermont-tennessee             0.0000000
+virginia-tennessee            0.0000000
+washington-tennessee          0.0000000
+west virginia-tennessee       0.0000000
+wisconsin-tennessee           0.0000000
+wyoming-tennessee             0.0000000
+utah-texas                    0.0000000
+vermont-texas                 0.0000000
+virginia-texas                0.0000000
+washington-texas              0.0000000
+west virginia-texas           0.0000000
+wisconsin-texas               0.0000000
+wyoming-texas                 0.0000000
+vermont-utah                  0.0000000
+virginia-utah                 0.0000000
+washington-utah               0.0000000
+west virginia-utah            0.0000000
+wisconsin-utah                0.0000000
+wyoming-utah                  0.0000000
+virginia-vermont              0.0000000
+washington-vermont            0.0000000
+west virginia-vermont         0.0000000
+wisconsin-vermont             0.0000000
+wyoming-vermont               0.0000000
+washington-virginia           0.0000000
+west virginia-virginia        0.0000000
+wisconsin-virginia            0.0000000
+wyoming-virginia              0.0000000
+west virginia-washington      0.0000000
+wisconsin-washington          0.0000000
+wyoming-washington            0.0000000
+wisconsin-west virginia       0.0000000
+wyoming-west virginia         0.0000000
+wyoming-wisconsin             0.0000000</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Family diversity by State, this should go with the Map that is Present</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>map_data_bar <span class="ot">&lt;-</span> amph_data <span class="sc">%&gt;%</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(State, Common_Names, Park_OccurrenceStatus, Family) <span class="sc">%&gt;%</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Park_OccurrenceStatus <span class="sc">==</span> <span class="st">'Present'</span>) <span class="sc">%&gt;%</span><span class="co">#filtering for present information</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(State <span class="sc">!=</span> <span class="st">"Mariana Islands"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( State <span class="sc">!=</span> <span class="st">"Trail (ME to GA)"</span>) <span class="sc">%&gt;%</span> <span class="co"># got rid of stuff on a trail or stuff on a random island</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State, Family) <span class="sc">%&gt;%</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>() )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'State'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(map_data_bar)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> map_data_bar, <span class="fu">aes</span>(<span class="at">fill=</span> Family , <span class="at">y=</span>count, <span class="at">x=</span>State)) <span class="sc">+</span> </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"stack"</span>, <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"State"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final-Figures-for-project_hh_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This graph the native vs. not native species count found in each state. Park occurrence is present.</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>nativevsnot_data_bar <span class="ot">&lt;-</span> amph_data <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(State, Common_Names, Park_OccurrenceStatus, Family, Nativeness) <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Park_OccurrenceStatus <span class="sc">==</span> <span class="st">'Present'</span>) <span class="sc">%&gt;%</span><span class="co">#filtering for present information</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(State <span class="sc">!=</span> <span class="st">"Mariana Islands"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>( State <span class="sc">!=</span> <span class="st">"Trail (ME to GA)"</span>) <span class="sc">%&gt;%</span> <span class="co"># got rid of stuff on a trail or stuff on a random island</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State, Nativeness) <span class="sc">%&gt;%</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>() )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'State'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(nativevsnot_data_bar)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nativevsnot_data_bar, <span class="fu">aes</span>(<span class="at">fill=</span> Nativeness , <span class="at">y=</span>count, <span class="at">x=</span>State)) <span class="sc">+</span> </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="st">"stack"</span>, <span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"State"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final-Figures-for-project_hh_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(count <span class="sc">~</span> Nativeness, <span class="at">var.equal=</span><span class="cn">TRUE</span>, <span class="at">data =</span> nativevsnot_data_bar) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  count by Nativeness
+t = 4.8695, df = 70, p-value = 6.692e-06
+alternative hypothesis: true difference in means between group Native and group Non-native is not equal to 0
+95 percent confidence interval:
+ 30.23449 72.18217
+sample estimates:
+    mean in group Native mean in group Non-native 
+               54.666667                 3.458333 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dont run this again it takes like 8 years to work</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co"># this was to get the names of the parks</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>park_names <span class="ot">&lt;-</span> amph_data <span class="sc">%&gt;%</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(Park_Name) <span class="sc">%&gt;%</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(park_names)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(park_names, <span class="st">"parknames.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygeocoder)</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your CSV file</span></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">"parknames.csv"</span>  <span class="co"># Replace with your file path</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(file_path)</span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Geocode the locations - this part chat gtp helped me out a lot with</span></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>geocoded_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geocode</span>(Park_Name, <span class="at">method =</span> <span class="st">"osm"</span>, <span class="at">lat =</span> Latitude, <span class="at">long =</span> Longitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Passing 286 addresses to the Nominatim single address geocoder</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Query completed in: 298.9 seconds</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the output to a new CSV file - chat helped me here too</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>output_path <span class="ot">&lt;-</span> <span class="st">"parknames_with_coordinates.csv"</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(geocoded_data, output_path, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Geocoding completed. Results saved to"</span>, output_path))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Geocoding completed. Results saved to parknames_with_coordinates.csv"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>world_maps <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"world"</span>)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(world_maps)</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>USA <span class="ot">&lt;-</span> world_maps <span class="sc">%&gt;%</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(region <span class="sc">==</span> <span class="st">"USA"</span>)</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>parknames_with_coordinates <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"parknames_with_coordinates.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 286 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Park_Name
+dbl (2): Latitude, Longitude
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>nationalparks <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(parknames_with_coordinates)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(nationalparks)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This figure shows the locations of all of the national parks that had amphibians recorded in them.</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(nationalparks) <span class="sc">%&gt;%</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span>  <span class="co"># Add a base map</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">lng =</span> <span class="sc">~</span>Longitude,  <span class="co"># Use the Longitude column </span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat =</span> <span class="sc">~</span>Latitude,   <span class="co"># Use the Latitude column </span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">popup =</span> <span class="sc">~</span> Park_Name)     <span class="co">#popup for labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in validateCoords(lng, lat, funcName): Data contains 11 rows with
+either missing or invalid lat/lon values and will be ignored</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-13ac00cc93050e83fb6a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-13ac00cc93050e83fb6a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[37.6117851,44.3563115,42.4222907,35.58206295,40.4598122,29.5084351,15.21764335,38.8733578,56.9017817,39.4677561,37.38169965,46.93749575,41.27192695,38.72652525,34.019802,38.14859785,36.83558675,43.52710585,35.78447335,38.037337,29.33324835,45.041956,null,45.6491925,25.50312235,36.55957135,30.2432615,38.5798065,36.14775715,37.5606866,42.26952835,37.114259,37.5707948,36.040131,32.6722263,36.14335015,41.84256315,32.9970473,35.231221,34.83077695,28.8882108,38.23325865,38.06702855,31.66500015,35.2676719,29.89743085,39.6563556,32.1212489,36.78076925,37.6387738,34.1423643,34.91610455,36.03831645,34.4592728,32.01397275,33.96637215,38.9874108,32.84561715,42.07249545,39.05113275,null,33.79415535,31.3501312,35.1313594,42.931692,43.4050421,36.61881535,30.8458476,38.45244285,41.2550938,63.23166155,37.6122529,44.58980335,36.4702428,41.1384391,40.4936928,48.20586645,43.0870723,39.79593335,34.86304075,35.04035325,41.7620379,37.8266426,null,40.7084252,38.9124375,32.14922805,41.8592117,30.3861383,null,30.59870065,36.4881634,31.22280755,42.2024552,38.182069,29.70973135,39.81116955,32.0280835,35.93530995,32.75209775,35.9074508,47.998904,45.62530385,40.8532115,39.77343855,38.2201846,67.75084099999999,38.19280805,40.59847885,39.80248005,38.1918855,33.2271975,48.6174862,58.8141751,37.6580958,37.8499275,41.61703415,38.9441564,36.30785475,38.9845522,38.9904203,46.41882345,47.9894596,37.79118705,35.63422005,43.81056675,36.13149745,30.2369736,31.9161088,36.98599835,38.963682989945,39.32594225,42.79373315,10.30602715,20.69913335,19.2608312,41.6678295,32.9727421,39.3845086,41.7671498,40.20441445,40.2888564,34.52907115,37.3835455,35.70546435,41.6152664,48.0073825,43.7306701,29.94334385,44.5508376,40.3462295,37.99134765,33.89706715,19.68182065,21.1728248,58.5049844,59.8685631,33.94943525,null,36.91527845,35.13748445,59.592312,47.35517445,67.3898231,41.76992415,60.7031496,35.883757,35.6005129,48.33158705,40.49138385,46.12823285,45.5653722,38.11903385,34.39541,30.2508201,43.6334826,37.1841693,38.8223326,42.36843335,37.253776,42.45483345,44.9533643,42.835209,34.61308835,34.45836305,35.09586715,39.36013275,46.85433805,40.7682755,43.87886055,37.89639075,37.6025953,34.85239825,36.6842583,46.21055015,37.89673105,42.81472955,34.1413693,67.84509605,48.80834845,-14.24912975,36.10873465,32.83722695,47.78653245,null,32.0081745,null,null,37.2398857,26.0316958,27.04553605,36.43042205,35.550101,34.9744769,36.4540477,37.2326498,35.1349455,36.4862515,44.01234625,46.5482534,38.6787275,36.86282685,38.07053155,37.7987456,38.585117,null,37.07809455,41.76807455,37.42198175,38.96185305,40.3553915,34.9743321,29.36799055,46.08046265,43.4972251,32.16837575,40.8868765,42.4680193,48.46225565,34.11010985,38.5485192,34.2579235,42.99433185,41.8338796,36.49584065,38.47196675,35.14012345,57.0484665,44.9309354,35.8745924,35.3711545,38.84069105,38.4469955,38.89492025,46.95847755,38.52988925,40.4387376,null,33.6469254,31.5722717,34.77339605,41.6752532,40.1006378,35.9150925,41.7977858,32.3325599,18.33688305,48.465549,35.62090855,35.1793072,13.402746,null,40.8272999,46.04339725,32.76418085,43.5788651,37.10018615,38.9380076,36.0159473,61.18090445,35.56495035,44.6200885,37.83930035,65.0522811,37.2430397,37.3247408],[-85.64277632870289,-68.21547874304891,-103.75899927165,-101.669643574931,-78.5563473934057,-100.974240351575,145.718442212013,-76.98340229999999,-158.106723041695,-77.73131855722821,-78.7972503721189,-90.58241535263561,-74.1673711363604,-109.563020097997,-91.348875741898,-75.1858332834653,-108.001650465856,-102.361662895674,-106.312878649256,-103.426333290207,-103.194172054229,-108.26226538391,null,-113.64604938069,-80.2348496319877,-84.671529061347,-94.4579614415794,-107.743697049741,-81.7150978132846,-80.9954953866184,-70.92115411257829,-79.732828400931,-112.185593911214,-93.30984129466169,-117.240939466284,-109.441643101352,-69.9521830724383,-111.532646974038,-75.5419598325156,-76.3420669952079,-80.8205112394722,-109.920662715574,-111.155256248546,-93.0064903323109,-82.4509261316089,-81.3118533696687,-77.46896092206291,-104.601230629794,-103.973040891364,-112.844745227305,-84.0860509422477,-85.25133794106981,-107.958325808648,-97.0087848924783,-109.347540575027,-120.095420364169,-77.236188554732,-79.8248869073326,-113.706164211126,-108.697945513445,null,-80.76365206863559,-110.256533656925,-81.8079551134317,-122.127890461188,-113.506083828718,-83.64550877076999,-81.4500759752587,-107.369471291481,-81.5376417192174,-151.040555432253,-119.08768129212,-104.715163375418,-117.088390867632,-74.9110214857006,-109.000787004192,-122.681934240356,-91.1920877075268,-77.2678801887713,-108.098019307914,-108.346418667964,-73.8990245,-122.027716030395,null,-72.95139759172061,-105.281431239649,-109.448188,-110.76327947779,-81.4975448,null,-103.89477059423,-87.8607122864094,-81.38989675767159,-104.547101153489,-99.2170511319421,-81.2327447376087,-79.588851848256,-80.8939505409889,-75.7118277223485,-79.87508605111719,-105.012118495231,-104.037740908844,-122.659947372313,-73.94175677695139,-79.92714695635441,-77.6014544828958,-153.247455658674,-81.0726093408956,-73.85792711726251,-77.2443554077804,-76.92083219190241,-108.273187504201,-113.760885059458,-136.872093539016,-111.093208896693,-122.5177518,-112.54753517539,-114.234945695735,-112.292896037024,-76.90095139111889,-77.2518291485722,-112.742700352362,-89.71465298407961,-105.612267234632,-83.4023660252508,-110.648794777143,-79.8436356219885,-88.6804295350445,-104.900737013705,-94.35557465848549,-77.17753920677841,-77.7688051531558,-114.946516369745,-61.4369313627947,-156.132430075568,-155.357866192526,-91.3524464224477,-85.7358946036849,-82.9839897337678,-73.9356097,-75.76736797092791,-96.8344345561619,-93.0301401726871,-109.072992256833,-109.562172457023,-87.2072619312131,-88.8289875184977,-103.83190299067,-89.9904848211131,-119.648329376724,-78.77558739799559,-122.132236791508,-115.951115788683,-156.027088026607,-156.93968403083,-155.089622598765,-150.025771383272,-84.5969855535205,null,-118.607655859626,-81.3893845620254,-135.159176541432,-101.385554062709,-159.057431901368,-121.526479615331,-153.265921553968,-114.690120125754,-101.709083978822,-118.171312699247,-121.404335948657,-123.898489852785,-107.427661868533,-86.9966694867996,-85.61685947746049,-98.62407394042491,-72.5342884051597,-86.1229910291288,-77.5306203537273,-73.70101715844859,-108.455596409289,-71.299763945623,-93.20778201939871,-98.1587675425437,-111.836666096864,-78.1102636284874,-115.539653534051,-77.3995280836556,-121.706334283135,-74.5389958,-103.459012392468,-122.58021828172,-110.011175080582,-87.92280742928079,-110.536258680994,-116.005541443992,-81.0429734293038,-100.139339083122,-82.0159868353617,-158.14451445357,-121.406214962027,-169.449040205408,-84.7244681588235,-83.60184358465941,-123.536050330855,null,-112.875183697427,null,null,-91.3228104537108,-97.46245631480789,-97.39789075348411,-113.817217077694,-105.6887421,-109.707994337463,-94.0299170212095,-77.3597029,-106.747819100259,-121.171140789253,-96.3246509410473,-86.3447387586756,-77.09275580000001,-112.739856800318,-122.917612193422,-122.464588924107,-77.38838750732189,null,-110.965509618568,-124.050500906899,-77.2544283818937,-77.04573833245369,-105.717695668307,-85.8156643286093,-98.47571730105631,-92.2228592516342,-72.3786650147042,-110.618345239669,-73.4995800841444,-71.0078698905711,-123.008245635082,-118.798621780909,-102.510096135815,-106.090199969951,-73.6328905082389,-103.70566875623,-118.559919384386,-78.46369728360921,-88.34069910730589,-135.31513497244,-85.89838335045199,-86.43315944215171,-111.511322773731,-76.93038597724509,-96.5775012245186,-77.0617993009671,-103.465005199534,-77.03841912149301,-111.709647385858,null,-111.113553075742,-111.047632347823,-112.028768854942,-75.0552306512253,-75.4444376701254,-106.510502504769,-73.9421736848785,-90.55079390507051,-64.740011839034,-92.88539732291299,-99.7044648810579,-111.451411713203,144.663200545885,null,-122.326211878819,-118.465172833899,-106.331192990001,-103.470853206917,-93.40776719886399,-77.2646608466908,-75.67029130254279,-143.827635999463,-111.405850822741,-110.560689331431,-119.516463480686,-143.150609862029,-108.686665272268,-113.004803575284],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Abraham Lincoln Birthplace National Historical Park","Acadia National Park","Agate Fossil Beds National Monument","Alibates Flint Quarries National Monument","Allegheny Portage Railroad National Historic Site","Amistad National Recreation Area","American Memorial Park","Anacostia Park","Aniakchak National Monument","Antietam National Battlefield","Appomattox Court House National Historical Park","Apostle Islands National Lakeshore","Appalachian National Scenic Trail","Arches National Park","Arkansas Post National Memorial","Assateague Island National Seashore","Aztec Ruins National Monument","Badlands National Park","Bandelier National Monument","Bent's Old Fort National Historic Site","Big Bend National Park","Bighorn Canyon National Recreation Area","Big Cypress National Preserve (includes addition)","Big Hole National Battlefield","Biscayne National Park","Big South Fork National River and Recreation Area","Big Thicket National Preserve","Black Canyon of the Gunnison National Park","Blue Ridge Parkway","Bluestone National Scenic River","Boston Harbor Islands National Recreation Area","Booker T. Washington National Monument","Bryce Canyon National Park","Buffalo National River","Cabrillo National Monument","Canyon De Chelly National Monument","Cape Cod National Seashore","Casa Grande Ruins National Monument","Cape Hatteras National Seashore","Cape Lookout National Seashore","Canaveral National Seashore","Canyonlands National Park","Capitol Reef National Park","Cane River Creole National Historical Park","Carl Sandburg Home National Historic Site","Castillo de San Marcos National Monument","Catoctin Mountain Park","Carlsbad Caverns National Park","Capulin Volcano National Monument","Cedar Breaks National Monument","Chattahoochee River National Recreation Area","Chickamauga & Chattanooga National Military Park","Chaco Culture National Historical Park","Chickasaw National Recreation Area","Chiricahua National Monument","Channel Islands National Park","Chesapeake and Ohio Canal National Historical Park","Charles Pinckney National Historic Site","City of Rocks National Reserve","Colorado National Monument","Colonial National Historical Park","Congaree National Park","Coronado National Memorial","Cowpens National Battlefield","Crater Lake National Park","Craters of the Moon National Monument","Cumberland Gap National Historical Park","Cumberland Island National Seashore","Curecanti National Recreation Area","Cuyahoga Valley National Park","Denali National Park","Devils Postpile National Monument","Devils Tower National Monument","Death Valley National Park","Delaware Water Gap National Recreation Area","Dinosaur National Monument","Ebey's Landing National Historical Reserve","Effigy Mounds National Monument","Eisenhower National Historic Site","El Malpais National Monument","El Morro National Monument","Eleanor Roosevelt National Historic Site","Eugene O'Neill National Historic Site","Everglades National Park (includes expansion)","Fire Island National Seashore","Florissant Fossil Beds National Monument","Fort Bowie National Historic Site","Fossil Butte National Monument","Fort Caroline National Memorial","Fort Circles Parks","Fort Davis National Historic Site","Fort Donelson National Battlefield","Fort Frederica National Monument","Fort Laramie National Historic Site","Fort Larned National Historic Site","Fort Matanzas National Monument","Fort Necessity National Battlefield","Fort Pulaski National Monument","Fort Raleigh National Historic Site","Fort Sumter and Fort Moultrie National Historical Park","Fort Union National Monument","Fort Union Trading Post National Historic Site","Fort Vancouver National Historic Site","Fort Washington Park","Friendship Hill National Historic Site","Fredericksburg and Spotsylvania National Military Park","Gates of the Arctic National Park","Gauley River National Recreation Area","Gateway National Recreation Area","Gettysburg National Military Park","George Washington Birthplace National Monument","Gila Cliff Dwellings National Monument","Glacier National Park","Glacier Bay National Park","Glen Canyon National Recreation Area","Golden Gate National Recreation Area","Golden Spike National Historical Park","Great Basin National Park","Grand Canyon National Park","Greenbelt Park","Great Falls Park","Grant-Kohrs Ranch National Historic Site","Grand Portage National Monument","Great Sand Dunes National Park","Great Smoky Mountains National Park","Grand Teton National Park","Guilford Courthouse National Military Park","Gulf Islands National Seashore","Guadalupe Mountains National Park","George Washington Carver National Monument","George Washington Memorial Parkway","Harpers Ferry National Historical Park","Hagerman Fossil Beds National Monument","Harmony Hall Park","Haleakala National Park","Hawaii Volcanoes National Park","Herbert Hoover National Historic Site","Horseshoe Bend National Military Park","Hopewell Culture National Historical Park","Home of Franklin D. Roosevelt National Historic Site","Hopewell Furnace National Historic Site","Homestead National Historical Park","Hot Springs National Park","Hovenweep National Monument","Hubbell Trading Post National Historic Site","Indiana Dunes National Park","Isle Royale National Park","Jewel Cave National Monument","Jean Lafitte National Historical Park and Preserve","John Day Fossil Beds National Monument","Johnstown Flood National Memorial","John Muir National Historic Site","Joshua Tree National Park","Kaloko-Honokohau National Historical Park","Kalaupapa National Historical Park","Katmai National Park","Kenai Fjords National Park","Kennesaw Mountain National Battlefield Park","Kenilworth Park and Aquatic Gardens","Kings Canyon National Park","Kings Mountain National Military Park","Klondike Gold Rush National Historical Park","Knife River Indian Villages National Historic Site","Kobuk Valley National Park","Lava Beds National Monument","Lake Clark National Park","Lake Mead National Recreation Area","Lake Meredith National Recreation Area","Lake Roosevelt National Recreation Area","Lassen Volcanic National Park","Lewis and Clark National Historical Park","Little Bighorn Battlefield National Monument","Lincoln Boyhood National Memorial","Little River Canyon National Preserve","Lyndon B. Johnson National Historical Park","Marsh-Billings-Rockefeller National Historical Park","Mammoth Cave National Park","Manassas National Battlefield Park","Martin Van Buren National Historic Site","Mesa Verde National Park","Minute Man National Historical Park","Mississippi National River and Recreation Area","Missouri National Recreational River","Montezuma Castle National Monument","Moores Creek National Battlefield","Mojave National Preserve","Monocacy National Battlefield","Mount Rainier National Park","Morristown National Historical Park","Mount Rushmore National Memorial","Muir Woods National Monument","Natural Bridges National Monument","Natchez Trace Parkway","Navajo National Monument","Nez Perce National Historical Park","New River Gorge National Park and Preserve","Niobrara National Scenic River","Ninety Six National Historic Site","Noatak National Preserve","North Cascades National Park","National Park of American Samoa","Obed Wild and Scenic River","Ocmulgee Mounds National Historical Park","Olympic National Park","Oregon Caves National Monument and Preserve","Organ Pipe Cactus National Monument","Oxon Cove Park and Oxon Hill Run","Oxon Run National Parkway","Ozark National Scenic Riverways","Palo Alto Battlefield National Historical Park","Padre Island National Seashore","Parashant National Monument","Pecos National Historical Park","Petrified Forest National Park","Pea Ridge National Military Park","Petersburg National Battlefield","Petroglyph National Monument","Pinnacles National Park","Pipestone National Monument","Pictured Rocks National Lakeshore","Piscataway Park","Pipe Spring National Monument","Point Reyes National Seashore","Presidio of San Francisco","Prince William Forest Park","Pu'uhonua O Honaunau National Historical Park","Rainbow Bridge National Monument","Redwood National Park","Richmond National Battlefield Park","Rock Creek Park","Rocky Mountain National Park","Russell Cave National Monument","San Antonio Missions National Historical Park","Saint Croix National Scenic Riverway","Saint-Gaudens National Historical Park","Saguaro National Park","Sagamore Hill National Historic Site","Saugus Iron Works National Historic Site","San Juan Island National Historical Park","Santa Monica Mountains National Recreation Area","Sand Creek Massacre National Historic Site","Salinas Pueblo Missions National Monument","Saratoga National Historical Park","Scotts Bluff National Monument","Sequoia National Park","Shenandoah National Park","Shiloh National Military Park","Sitka National Historical Park","Sleeping Bear Dunes National Lakeshore","Stones River National Battlefield","Sunset Crater Volcano National Monument","Suitland Parkway","Tallgrass Prairie National Preserve","Theodore Roosevelt Island","Theodore Roosevelt National Park","Thomas Stone National Historic Site","Timpanogos Cave National Monument","Timucuan Ecological and Historic Preserve","Tonto National Monument","Tumacacori National Historical Park","Tuzigoot National Monument","Upper Delaware Scenic and Recreational River","Valley Forge National Historical Park","Valles Caldera National Preserve","Vanderbilt Mansion National Historic Site","Vicksburg National Military Park","Virgin Islands National Park","Voyageurs National Park","Washita Battlefield National Historic Site","Walnut Canyon National Monument","War in the Pacific National Historical Park","Weir Farm National Historical Park","Whiskeytown-Shasta-Trinity National Recreation Area","Whitman Mission National Historic Site","White Sands National Park","Wind Cave National Park","Wilson's Creek National Battlefield","Wolf Trap National Park for the Performing Arts","Wright Brothers National Memorial","Wrangell-St. Elias National Park","Wupatki National Monument","Yellowstone National Park","Yosemite National Park","Yukon-Charley Rivers National Preserve","Yucca House National Monument","Zion National Park"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-14.24912975,67.84509605],"lng":[-169.449040205408,145.718442212013]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

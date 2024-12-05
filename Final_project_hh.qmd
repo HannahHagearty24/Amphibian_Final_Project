@@ -1,0 +1,581 @@
+---
+title: "Amphibians Final"
+author: "Hannah Hagearty"
+format: html
+editor: visual
+---
+
+## Frogs, Salamanders and Toads YAY!!!
+
+#load in the packages needed
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(dplyr)
+```
+
+#loading in data
+
+```{r}
+amph_data <- read.csv("Amphibians_on_NPS_Lands_20231201.csv")
+view(amph_data)
+
+```
+
+#clean up data
+
+```{r}
+str(amph_data)
+
+
+
+```
+
+#Make a map with individuals by points - Common Name (number of ones that occur in a state), graphed on the states the parks occur in, showing how many species of amphibian were recorded per park in the present day. Will switch up by by Park occurance status.
+
+```{r}
+# I got help from Chat GTP on this question, mostly i would get an error and ask it how to fix it, and I also asked it how to get a graph template, hope that is ok?
+
+library(ggplot2)
+library(maps)
+library(dplyr)
+
+# Get the map of the USA - with help from chat GTP
+usa_map <- map_data("state")
+
+View(usa_map)
+
+map_data <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus) %>%
+  filter(Park_OccurrenceStatus == 'Present') %>% #filtering for present information
+  group_by(State) %>%
+  summarise(count = n())
+# ok so this is taking the number of common names found in each state and it is going to hopefully graph them on a map of the united states, to show species diversity of amphibians in national parks by state.
+ 
+state_abbreviation_to_name <- data.frame(
+  abbreviation = c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
+                   "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+                   "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                   "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+  name = c("alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+           "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", 
+           "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+           "maine", "maryland", "massachusetts", "michigan", "minnesota", 
+           "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", 
+           "new jersey", "new mexico", "new york", "north carolina", "north dakota", 
+           "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", 
+           "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", 
+           "washington", "west virginia", "wisconsin", "wyoming")
+) # change the labels in the maps_data, to lowercase state names because i need that to merge with the stupid map :(
+
+map_data <- map_data %>%
+  left_join(state_abbreviation_to_name, by = c("State" = "abbreviation"))
+
+View(map_data)
+
+map_data <- map_data %>%
+  drop_na() #get rid of stuff that is not labeled as a state (like territories and islands)
+  
+
+#couldn't get this to work, so asked chat GTP and it said that my merge was not working because the states were named different abbreviations, so this should change the map data to how the map labels things.
+
+View(map_data)
+ 
+usa_map_data <- usa_map %>%
+  left_join(map_data, by = c("region" = "name")) #join them together
+
+View(usa_map_data)
+
+
+#get the map into R.
+#got help from chat gtp on this
+#ggplot(data = usa_map, aes(x = long, y = lat, group = group)) +
+#  geom_polygon(fill = "lightgray", color = "black") + 
+  
+ggplot(data = usa_map_data, aes(x = long, y = lat, group = group, fill = count)) +
+  geom_polygon(color = "black") +  # Borders of the states
+  scale_fill_viridis_c(option = "D") +  # said this one was color blind friendly
+                  
+  #scale_fill_continuous() +
+  labs(title = "Species Diversity of Amphibians in National Parks by State - Present day", fill = "Count") +
+  theme_minimal() +
+  theme(legend.position = "right")+
+  ylab("Latitude") +
+  xlab("Longitude")
+
+
+```
+```{r}
+# got help from notes and chat GTP on how to run this statistical test and on which statistical test to pick, because initially i thought I would run a T-test.
+
+library(tidyverse)
+library(gt)
+library(DAAG)
+library(car)
+library(multcomp)
+
+# because I have a categorical vaiable and the region column had more then two options, I need to run an anova test instead of just a t test.
+anova_result <- aov(count ~ region, data = usa_map_data)
+summary(anova_result)
+
+#post hock test to see if there is significant differences in the data
+tukey_result <- TukeyHSD(anova_result)
+tukey_result
+
+
+
+
+```
+
+```{r}
+usa_map_h <- map_data("state")
+
+View(usa_map_h)
+
+map_data_h <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus) %>%
+  filter(Park_OccurrenceStatus == 'Historical') %>% #filtering for present day information
+  group_by(State) %>%
+  summarise(count = n())
+# ok so this is taking the number of common names found in each state and it is going to hopefully graph them on a map of the united states, to show species diversity of amphibians in national parks by state.
+ 
+state_abbreviation_to_name_h <- data.frame(
+  abbreviation = c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
+                   "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+                   "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                   "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+  name = c("alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+           "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", 
+           "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+           "maine", "maryland", "massachusetts", "michigan", "minnesota", 
+           "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", 
+           "new jersey", "new mexico", "new york", "north carolina", "north dakota", 
+           "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", 
+           "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", 
+           "washington", "west virginia", "wisconsin", "wyoming")
+) # change the labels in the maps_data, to lowercase state names because i need that to merge with the stupid map :(
+
+map_data_h <- map_data_h %>%
+  left_join(state_abbreviation_to_name_h, by = c("State" = "abbreviation"))
+
+View(map_data_h)
+
+map_data_h <- map_data_h %>%
+  drop_na() #get rid of stuff that is not labeled as a state (like territories and islands)
+  
+
+#couldn't get this to work, so asked chat GTP and it said that my merge was not working because the states were named different abbreviations, so this should change the map data to how the map labels things.
+
+View(map_data_h)
+ 
+usa_map_data_h <- usa_map_h %>%
+  left_join(map_data_h, by = c("region" = "name")) #join them together
+
+View(usa_map_data_h)
+
+
+#get the map into R.
+#got help from chat gtp on this
+#ggplot(data = usa_map, aes(x = long, y = lat, group = group)) +
+#  geom_polygon(fill = "lightgray", color = "black") + 
+  
+ggplot(data = usa_map_data_h, aes(x = long, y = lat, group = group, fill = count)) +
+  geom_polygon(color = "black") +  # Borders of the states
+  scale_fill_viridis_c(option = "D") +  # said this one was color blind friendly
+                  
+  #scale_fill_continuous() +
+  labs(title = "Species Diversity of Amphibians in National Parks by State - Historical", fill = "Count") +
+  theme_minimal() +
+  theme(legend.position = "right")+
+  ylab("Latitude") +
+  xlab("Longitude")
+
+
+
+```
+
+```{r}
+usa_map_Adj <- map_data("state")
+
+View(usa_map_Adj)
+
+map_data_Adj <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus) %>%
+  filter(Park_OccurrenceStatus == 'Adjacent') %>% #filtering for present day information
+  group_by(State) %>%
+  summarise(count = n())
+# ok so this is taking the number of common names found in each state and it is going to hopefully graph them on a map of the united states, to show species diversity of amphibians in national parks by state.
+ 
+state_abbreviation_to_name_Adj <- data.frame(
+  abbreviation = c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
+                   "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+                   "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                   "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+  name = c("alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+           "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", 
+           "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+           "maine", "maryland", "massachusetts", "michigan", "minnesota", 
+           "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", 
+           "new jersey", "new mexico", "new york", "north carolina", "north dakota", 
+           "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", 
+           "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", 
+           "washington", "west virginia", "wisconsin", "wyoming")
+) # change the labels in the maps_data, to lowercase state names because i need that to merge with the stupid map :(
+
+map_data_Adj <- map_data_Adj %>%
+  left_join(state_abbreviation_to_name_Adj, by = c("State" = "abbreviation"))
+
+View(map_data_Adj)
+
+map_data_Adj <- map_data_Adj %>%
+  drop_na() #get rid of stuff that is not labeled as a state (like territories and islands)
+  
+
+#couldn't get this to work, so asked chat GTP and it said that my merge was not working because the states were named different abbreviations, so this should change the map data to how the map labels things.
+
+View(map_data_Adj)
+ 
+usa_map_data_Adj <- usa_map_Adj %>%
+  left_join(map_data_Adj, by = c("region" = "name")) #join them together
+
+View(usa_map_data_Adj)
+
+
+#get the map into R.
+#got help from chat gtp on this
+#ggplot(data = usa_map, aes(x = long, y = lat, group = group)) +
+#  geom_polygon(fill = "lightgray", color = "black") + 
+  
+ggplot(data = usa_map_data_Adj, aes(x = long, y = lat, group = group, fill = count)) +
+  geom_polygon(color = "black") +  # Borders of the states
+  scale_fill_viridis_c(option = "D") +  # said this one was color blind friendly
+                  
+  #scale_fill_continuous() +
+  labs(title = "Species Diversity of Amphibians in National Parks by State - Adjacent", fill = "Count") +
+  theme_minimal() +
+  theme(legend.position = "right")+
+  ylab("Latitude") +
+  xlab("Longitude")
+
+
+
+
+
+
+```
+
+```{r}
+usa_map_PO <- map_data("state")
+
+View(usa_map_PO)
+
+map_data_PO <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus) %>%
+  filter(Park_OccurrenceStatus == 'Possible') %>% #filtering for present day information
+  group_by(State) %>%
+  summarise(count = n())
+# ok so this is taking the number of common names found in each state and it is going to hopefully graph them on a map of the united states, to show species diversity of amphibians in national parks by state.
+ 
+state_abbreviation_to_name_Adj <- data.frame(
+  abbreviation = c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
+                   "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+                   "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                   "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+  name = c("alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+           "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", 
+           "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+           "maine", "maryland", "massachusetts", "michigan", "minnesota", 
+           "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", 
+           "new jersey", "new mexico", "new york", "north carolina", "north dakota", 
+           "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", 
+           "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", 
+           "washington", "west virginia", "wisconsin", "wyoming")
+) # change the labels in the maps_data, to lowercase state names because i need that to merge with the stupid map :(
+
+map_data_PO <- map_data_PO %>%
+  left_join(state_abbreviation_to_name_Adj, by = c("State" = "abbreviation"))
+
+View(map_data_PO)
+
+map_data_PO <- map_data_PO %>%
+  drop_na() #get rid of stuff that is not labeled as a state (like territories and islands)
+  
+
+#couldn't get this to work, so asked chat GTP and it said that my merge was not working because the states were named different abbreviations, so this should change the map data to how the map labels things.
+
+View(map_data_PO)
+ 
+usa_map_data_PO <- usa_map_PO %>%
+  left_join(map_data_PO, by = c("region" = "name")) #join them together
+
+View(usa_map_data_PO)
+
+
+#get the map into R.
+#got help from chat gtp on this
+#ggplot(data = usa_map, aes(x = long, y = lat, group = group)) +
+#  geom_polygon(fill = "lightgray", color = "black") + 
+  
+ggplot(data = usa_map_data_PO, aes(x = long, y = lat, group = group, fill = count)) +
+  geom_polygon(color = "black") +  # Borders of the states
+  scale_fill_viridis_c(option = "D") +  # said this one was color blind friendly
+                  
+  #scale_fill_continuous() +
+  labs(title = "Species Diversity of Amphibians in National Parks by State - Possible", fill = "Count") +
+  theme_minimal() +
+  theme(legend.position = "right")+
+  ylab("Latitude") +
+  xlab("Longitude")
+
+
+
+```
+
+# Globabl Conservation Status By Family
+
+```{r}
+#Trying to graph Global Conservation Status by Family of amphibian, color indicates native or not
+
+Global_conservation_status_rank_by_family <- amph_data %>%
+  select(GRank, Family, Nativeness) 
+
+
+view(Global_conservation_status_rank_by_family)
+
+ggplot(data = Global_conservation_status_rank_by_family, aes(x = GRank , y = Family, color = Nativeness )) +
+  geom_point()
+```
+
+#These are the Stacked Bar Plots that each go with one of the Maps.
+
+```{r}
+#Family diversity by State, this should go with the Map that is Adjacent
+
+map_data_Adj_bar <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus, Family) %>%
+  filter(Park_OccurrenceStatus == 'Adjacent') %>% #filtering for Adjacent information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Family) %>%
+  summarise(count = n() )
+
+view(map_data_Adj_bar)
+
+
+ggplot(data = map_data_Adj_bar, aes(fill= Family , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+```{r}
+#Family diversity by State, this should go with the Map that is Present
+
+map_data_bar <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus, Family) %>%
+  filter(Park_OccurrenceStatus == 'Present') %>%#filtering for present information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Family) %>%
+  summarise(count = n() )
+
+view(map_data_bar)
+
+
+ggplot(data = map_data_bar, aes(fill= Family , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+```
+
+```{r}
+map_data_his_bar <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus, Family) %>%
+  filter(Park_OccurrenceStatus == 'Historical') %>%#filtering for Historical information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Family) %>%
+  summarise(count = n() )
+
+view(map_data_his_bar)
+
+
+ggplot(data = map_data_his_bar, aes(fill= Family , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+```{r}
+map_data_pos_bar <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus, Family) %>%
+  filter(Park_OccurrenceStatus == 'Possible') %>% #filtering for Possible information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Family) %>%
+  summarise(count = n() )
+
+view(map_data_pos_bar)
+
+
+ggplot(data = map_data_pos_bar, aes(fill= Family , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+```
+
+```{r}
+#working on this
+
+#library(dplyr)
+#library(lubridate)
+
+
+#class(amph_data$Verified_Date)
+#amph_data$Verified_Date <- as.Date(amph_data$Verified_Date) # chat gtp helped me figure out that my dates were being stored as characters and thats why the below code was not working.
+#amph_data$Verified_Date <- mdy(amph_data$Verified_Date)
+ #view(amph_data) # had to change up the order of day month and year so that everything got pulled to the correct columns.
+
+#native <- amph_data %>%
+#  select(State, Nativeness, Verified_Date) %>%
+#  mutate(
+ #   YEAR = year(Verified_Date),
+ #   MONTH = month(Verified_Date),
+ #   DAY = day(Verified_Date)
+ # ) %>%
+ # group_by(State, Nativeness) %>%
+ # summarise(count = n())
+ 
+
+#view(native)
+
+
+#ggplot(data = native, aes(y=count, x=State, color = Nativeness)) + 
+#    geom_point() +
+#  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+#native <- amph_data %>%
+#  select(State, Nativeness, Verified_Date) %>%
+#  mutate(
+#    YEAR = year(Verified_Date),
+#    MONTH = month(Verified_Date),
+ #   DAY = day(Verified_Date)
+ # ) %>%
+ # group_by(State, Nativeness, Year) %>%
+ # summarise(count = n())
+ 
+
+
+
+```
+
+```{r}
+
+library(leaflet)
+
+
+# this was to get the names of the parks
+park_names <- amph_data %>%
+  select(Park_Name) %>%
+  unique()
+
+view(park_names)
+
+write.csv(park_names, "parknames.csv", row.names = FALSE)
+
+library(tidygeocoder)
+library(dplyr)
+library(tidyr)
+
+# Load your CSV file
+file_path <- "parknames.csv"  # Replace with your file path
+data <- read.csv(file_path)
+
+# Geocode the locations
+geocoded_data <- data %>%
+  geocode(Park_Name, method = "osm", lat = Latitude, long = Longitude)
+
+# Save the output to a new CSV file
+output_path <- "parknames_with_coordinates.csv"
+write.csv(geocoded_data, output_path, row.names = FALSE)
+
+print(paste("Geocoding completed. Results saved to", output_path))
+
+
+```
+
+```{r}
+library(tidyverse)
+library(maps)
+
+world_maps <- map_data("world")
+
+view(world_maps)
+
+USA <- world_maps %>%
+  filter(region == "USA")
+
+library(readr)
+parknames_with_coordinates <- read_csv("parknames_with_coordinates.csv")
+
+nationalparks <- data.frame(parknames_with_coordinates)
+view(nationalparks)
+
+
+ggplot(data = USA, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill = "gray", color = "white") +  # Draw the map
+  coord_quickmap() +  # Ensure correct aspect ratio
+  geom_point(data = nationalparks, aes(x = Longitude, y = Latitude, group = 2), color = "red")
+
+```
+
+```{r}
+# This figure shows the locations of all of the national parks that had amphibians recorded in them.
+
+library(leaflet)
+
+leaflet(nationalparks) %>%
+  addTiles() %>%  # Add a base map
+  addMarkers(
+    lng = ~Longitude,  # Use the Longitude column for marker positions
+    lat = ~Latitude,   # Use the Latitude column for marker positions
+    popup = ~ Park_Name)     # Optional: Use a column named 'popup' for labels
+
+
+```
+
+```{r}
+#This graph the native vs. not native species count found in each state. Park occurrence is present.
+
+nativevsnot_data_bar <- amph_data %>%
+  select(State, Common_Names, Park_OccurrenceStatus, Family, Nativeness) %>%
+  filter(Park_OccurrenceStatus == 'Present') %>%#filtering for present information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Nativeness) %>%
+  summarise(count = n() )
+
+view(nativevsnot_data_bar)
+
+
+ggplot(data = nativevsnot_data_bar, aes(fill= Nativeness , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+```
+
+
+
+
+
