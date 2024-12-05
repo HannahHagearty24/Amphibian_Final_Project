@@ -1,0 +1,234 @@
+---
+title: "Final Project - Amphibians"
+author: "Hannah Hagearty"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+## Final Project - Analysis of Diversity in Amphibians in the United States
+
+**Introduction:**\
+Amphibians are important indicator species; their sensitive skin makes them particular susceptible to pollution and habitat changes [@west]. They also fill an important niche in the environment, acting to control pest populations [@west]. Species diversity is correlated with the health and stability of an ecosystem [@usepa2017]. Therefore, tracking amphibian diversity is an important metric for helping to determine the health and stability of an ecosystem. Population decline in amphibians is likely due to a combination of factors including: habitat loss, pathogens, environmental pollutants, atmospheric changes and invasive species [@hayes2010]. The National Parks service has protected large area of various ecological backgrounds in an attempt to preserve the environments and the various kinds of diverse species that reside there. The National Parks have been instrumental in the conservation and characterization of amphibian species across their managed parks and facilities [@halstead2022]. The dataset being analyzed in the following review seeks to better understand what sort of amphibian diversity is present in parks today, and characterize and compare diversity by state [@lafrance2024]. This analysis is completed in the hope that tracking changes to diversity by state will continue and that changes to species diversity can be monitored over time and in conjunction with impactful environmental factors. This knowledge can then be used to inform conservation efforts focusing on maintaining the diverse fold of amphibians present within the United States.
+
+**Methods:**
+
+Data collection was a result of observation of amphibians in parks across the United States (and territories) between the years of 2020 and 2023. This data was then validated by the Lafrance team by conducting a 1-hour cross check of the information logged against theses, primary literature, range maps and reports [@lafrance2024]. This data was then logged into the NPSpecies platform [@npspecie] which is a database consisting of multiple taxa observations logged in national park units. Lafrance and team then further clarified the data. Nomenclature was added using the Integrative Taxonomic Information System (ITIS) [@integrat], and the species observations that were not verifiable were removed. In addition to this, the team had regional experts verify the updated records after updating the taxonomy, logging further occurrences or changing the occurrence status of the information logged [@lafrance2024]. Global Rank (Grank) and State rank (SRank) were also assigned to the data by the Lafrance team, this pulled information from the Nature Serve database[@lafrance2024a][@naturese]. External tools like iNaturalist and Herpmapper were not used in this data aggregation exercise [@lafrance2024b]. The methods used to generate the analysis in this paper are as follows: R (with the use of RStudio) was the primary applications used to conduct all data cleaning and analysis [@rcoreteam2024]. The data analyzed during this set of analysis contained only occurrences with the ‘present’ denotation in the NPS Species occurrence category. This was in attempt to use only the most accurate and verified data. Non-standard packages used include: leaflet [@cheng2024] and tidygeocoder [@cambon2021] and statistical analysis utilized the base R package.
+
+**Results:**
+
+Using the data obtained from the National Park’s NPSpecies Database and cleaned and aggregated by the Lafrance group, the following results were observed. 287 parks across the United States and territories were sampled between the years of 2020 and 2023. The locations sampled are able to be viewed on the interactive map located in Figure 1. Of these locations, those in the intercontinental United States were sampled and counted for the number of different amphibian species recorded in the state. In this context, Diversity is defined as the number of different amphibian species recorded in the state (Figure 2.). The states shaded in lighter yellows and greens are representative of high levels of amphibian diversity, whereas states shaded in darker greens and blues are indicative of lower levels of species diversity. According to EPA, the regions that demonstrated the highest levels of amphibian diversity are the Eastern Temperate Forests and Mediterranean Californian regions [@usepa2015]. The regions that demonstrate the lowest levels of amphibian diversity are the great plains and the North American dessert regions [@usepa2015]. These habitats provide and support very different kind of life, and direct comparison neglecting this would be irresponsible. However, noting the state of ecological diversity currently present will allow for change to be recorded. Figure 3. takes a broader look at diversity by state by showing the prevalence of which different families were observed in all states and territories. Many species can belong to the same family, so looking at the distributions of families per state is another valued metric for looking into diversity. Though some states like Virginia have the most amphibians recorded, other states like Michigan actually have more different kinds of families represented, although less amphibians in total were observed. Some states like Alaska, Guam and the Virgin Islands had low diversity in terms of families, and also had very low counts of occurrences (amphibians observed). From this we can determine that count is not necessarily correlated to diversity. Lastly, Figure 4. Gives context to the distribution of native and non-native species found in each state. Non-native species could contribute to increased recorded diversity of amphibians in states, but are not beneficial to the ecosystem or preservation of the native amphibians. Therefore, it is important to show a distribution of native vs. non-native amphibians to gain an accurate perception of diversity within each community. A T-test was run on the counts of native vs. non-native occurrences observed. The p-value is reported at p-value = 6.692e-06, meaning there is a statistically significant difference between native and non-native species observed [@t-test].
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(dplyr)
+
+amph_data <- read.csv("Amphibians_on_NPS_Lands_20231201.csv")
+view(amph_data)
+
+str(amph_data)
+
+
+
+```
+
+```{r, echo=FALSE}
+#dont run this again it takes like 8 years to work
+library(leaflet)
+
+
+# this was to get the names of the parks
+park_names <- amph_data %>%
+ dplyr::select(Park_Name) %>%
+  unique()
+
+view(park_names)
+
+write.csv(park_names, "parknames.csv", row.names = FALSE)
+
+library(tidygeocoder)
+library(dplyr)
+library(tidyr)
+
+# Load your CSV file
+file_path <- "parknames.csv"  # Replace with your file path
+data <- read.csv(file_path)
+
+# Geocode the locations - this part chat gtp helped me out a lot with
+geocoded_data <- data %>%
+  geocode(Park_Name, method = "osm", lat = Latitude, long = Longitude)
+
+# Save the output to a new CSV file - chat helped me here too
+output_path <- "parknames_with_coordinates.csv"
+write.csv(geocoded_data, output_path, row.names = FALSE)
+
+print(paste("Geocoding completed. Results saved to", output_path))
+
+
+```
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(maps)
+
+world_maps <- map_data("world")
+
+view(world_maps)
+
+USA <- world_maps %>%
+  filter(region == "USA")
+
+library(readr)
+parknames_with_coordinates <- read_csv("parknames_with_coordinates.csv")
+
+nationalparks <- data.frame(parknames_with_coordinates)
+view(nationalparks)
+
+# This figure shows the locations of all of the national parks that had amphibians recorded in them.
+
+library(leaflet)
+
+leaflet(nationalparks) %>%
+  addTiles() %>%  # Add a base map
+  addMarkers(
+    lng = ~Longitude,  # Use the Longitude column 
+    lat = ~Latitude,   # Use the Latitude column 
+    popup = ~ Park_Name)     #popup for labels
+
+
+```
+
+**Figure 1:** This visual is an interactive map that is showing the location of all of the National Parks across the United States and the incorporated territories that were sampled for amphibians. These parks represent a larger variety of different habitats.
+
+```{r, echo=FALSE}
+# I got help from Chat GTP on this question, mostly i would get an error and ask it how to fix it, and I also asked it how to get a graph template, hope that is ok?
+
+library(ggplot2)
+library(maps)
+library(dplyr)
+
+# Get the map of the USA - with help from chat GTP
+usa_map <- map_data("state")
+
+View(usa_map)
+
+map_data <- amph_data %>%
+  dplyr::select(State, Common_Names, Park_OccurrenceStatus) %>% #other packages interfear so keep this in bro
+  filter(Park_OccurrenceStatus == 'Present') %>% #filtering for present information
+  group_by(State) %>%
+  summarise(count = n())
+# ok so this is taking the number of common names found in each state and it is going to hopefully graph them on a map of the united states, to show species diversity of amphibians in national parks by state.
+ 
+state_abbreviation_to_name <- data.frame(
+  abbreviation = c("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
+                   "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
+                   "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
+                   "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
+                   "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"),
+  name = c("alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+           "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho", 
+           "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+           "maine", "maryland", "massachusetts", "michigan", "minnesota", 
+           "mississippi", "missouri", "montana", "nebraska", "nevada", "new hampshire", 
+           "new jersey", "new mexico", "new york", "north carolina", "north dakota", 
+           "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", "south carolina", 
+           "south dakota", "tennessee", "texas", "utah", "vermont", "virginia", 
+           "washington", "west virginia", "wisconsin", "wyoming")
+) # change the labels in the maps_data, to lowercase state names because i need that to merge with the stupid map :(
+
+map_data <- map_data %>%
+  left_join(state_abbreviation_to_name, by = c("State" = "abbreviation"))
+
+View(map_data)
+
+map_data <- map_data %>%
+  drop_na() #get rid of stuff that is not labeled as a state (like territories and islands)
+  
+
+#couldn't get this to work, so asked chat GTP and it said that my merge was not working because the states were named different abbreviations, so this should change the map data to how the map labels things.
+
+View(map_data)
+ 
+usa_map_data <- usa_map %>%
+  left_join(map_data, by = c("region" = "name")) #join them together
+
+View(usa_map_data)
+
+
+#get the map into R.
+#got help from chat gtp on this
+#ggplot(data = usa_map, aes(x = long, y = lat, group = group)) +
+#  geom_polygon(fill = "lightgray", color = "black") + 
+  
+ggplot(data = usa_map_data, aes(x = long, y = lat, group = group, fill = count)) +
+  geom_polygon(color = "black") +  # Borders of the states
+  scale_fill_viridis_c(option = "D") +  # said this one was color blind friendly
+                  
+  #scale_fill_continuous() +
+  labs(title = "Species Diversity of Amphibians in National Parks by State - Present day", fill = "Count") +
+  theme_minimal() +
+  theme(legend.position = "right")+
+  ylab("Latitude") +
+  xlab("Longitude")
+
+
+```
+
+**Figure 2:** This figure depicts amphibian species diversity across of the intercontinental United States. The intercontinental parks include only the parks within the 48 connected states, and do not include data from the territories. Diversity is determined by the number of different amphibian species recorded in the state. The data was sorted to group by state and count the number of different common names that occurred within the state.
+
+```{r, echo=FALSE}
+#Family diversity by State, this should go with the Map that is Present
+
+map_data_bar <- amph_data %>%
+  dplyr::select(State, Common_Names, Park_OccurrenceStatus, Family) %>%
+  filter(Park_OccurrenceStatus == 'Present') %>%#filtering for present information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Family) %>%
+  summarise(count = n() )
+
+view(map_data_bar)
+
+
+ggplot(data = map_data_bar, aes(fill= Family , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  ylab("Count") +
+  xlab("State")
+
+
+```
+
+**Figure 3:** This figure depicts family diversity by state. Since many species are apart of the same family and closely related, tracking by family gives a broader scope as to the diversity of the national parks within a state. The data was grouped by state and family. The height of each bar is representative of how many occurrences of each family were counted.
+
+```{r, echo=FALSE}
+#This graph the native vs. not native species count found in each state. Park occurrence is present.
+
+nativevsnot_data_bar <- amph_data %>%
+  dplyr::select(State, Common_Names, Park_OccurrenceStatus, Family, Nativeness) %>%
+  filter(Park_OccurrenceStatus == 'Present') %>%#filtering for present information
+  filter(State != "Mariana Islands") %>%
+  filter( State != "Trail (ME to GA)") %>% # got rid of stuff on a trail or stuff on a random island
+  group_by(State, Nativeness) %>%
+  summarise(count = n() )
+
+view(nativevsnot_data_bar)
+
+
+ggplot(data = nativevsnot_data_bar, aes(fill= Nativeness , y=count, x=State)) + 
+    geom_bar(position="stack", stat="identity") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  ylab("Count") +
+  xlab("State")
+
+
+```
+
+**Figure 4:** This stacked bar graph depicts the distribution of native and non-native species found in each state. It is important to recognize that invasive or non-native species could be contributing to perceived amphibian diversity, but in fact often do not have a positive impact on the environment. A T-test was run on this data in order to determined, the following statistics were observed (t = 4.8695, df = 70, p-value = 6.692e-06). This means that there is a statistically significant difference between the native species found, and the non-native species found. This visualization helps to show that although there are non-native species present in multiple states, the majority of species observed in every state are native.
+
+**Discussion:**
+
+In summary, this data provides a baseline that can be used as a tool of comparison in the future. New data can be cleaned and visualized using the same coding techniques utilized here and the impacts of different environmental factors can be correlated to changes in amphibian diversity. From current data visualization, it has been determined that in the intercontinental United States, the Eastern Temperate Forests and Mediterranean Californian regions [@usepa2015] are the most diverse in terms of amphibians. Though higher count of amphibians does not always correlate to increased amphibian diversity in the environment. Lastly, there is a statistically significant difference between the occurrences of native amphibians vs. non-native amphibians. This metric is important to consider as having non-native amphibians could inflate perceived diversity of the environment, yet have a negative impact.
